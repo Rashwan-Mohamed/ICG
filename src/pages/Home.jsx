@@ -88,19 +88,19 @@ function Home() {
             <SeeProduct where={'/product_detail/yx1'}></SeeProduct>
             <picture>
               <source
-                srcSet='\assets\icg\large-venue-projectors_bg_largevenueprinters.jpg'
+                srcSet='.\assets\icg\large-venue-projectors_bg_largevenueprinters.jpg'
                 media='(min-width:1024px)'
               />
               <source
-                srcSet='\assets\icg\large-venue-projectors_bg_largevenueprinters.jpg'
+                srcSet='.\assets\icg\large-venue-projectors_bg_largevenueprinters.jpg'
                 media='(min-width:521px)'
               />
               <source
-                srcSet='\assets\icg\large-venue-projectors_bg_largevenueprinters.jpg'
+                srcSet='.\assets\icg\large-venue-projectors_bg_largevenueprinters.jpg'
                 media='(max-width:520px)'
               />
               <img
-                src='\assets\icg\large-venue-projectors_bg_largevenueprinters.jpg'
+                src='.\assets\icg\large-venue-projectors_bg_largevenueprinters.jpg'
                 alt='speaker-zx7'
               />
             </picture>
