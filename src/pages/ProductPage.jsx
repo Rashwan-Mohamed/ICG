@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useParams, useNavigate, useLocation } from 'react-router-dom'
-import data from '../data/product-data.json'
+// import { data } from '../data/CategoryData'
+import { HEADPHONES as data } from '../data/CategoryData'
 import SeeProduct from '../components/SeeProduct'
 import Category from '../components/Category'
 import Bringing from '../components/Bringing'
 import Footer from '../components/Footer'
 import Toggle from '../components/Toggle'
+import ProductCat from '../components/ProductCat'
 import { useGlobalContext } from '../context'
 function ProductPage() {
   const [product, setProduct] = useState(0)
@@ -13,6 +15,8 @@ function ProductPage() {
   const [loading, setIsLoading] = useState(true)
   const location = useLocation().pathname
   const { amount, add, cart } = useGlobalContext()
+  const [sel, setSelected] = useState(0)
+  const [similar, setSimilar] = useState([])
   useEffect(() => {
     setNum(1)
   }, [location])
@@ -23,25 +27,65 @@ function ProductPage() {
     setProduct(theOne)
     setIsLoading(false)
     window.scrollTo(0, 0)
+    let Simadd = []
+    data.forEach((pros) => {
+      const { price: comp, id: ip } = pros
+      console.log(ip !== theOne.id, ip === theOne.id)
+      if (ip === theOne.id) return
+      if (
+        Math.abs(
+          Number(comp.replace(/,/g, '')) -
+            Number(theOne.price.replace(/,/g, ''))
+        ) >= 1000 ||
+        Math.abs(
+          Number(comp.replace(/,/g, '')) -
+            Number(theOne.price.replace(/,/g, ''))
+        ) <= 3000
+      ) {
+        if (Simadd.length < 3) {
+          Simadd.push(pros)
+        }
+      }
+    })
+    setSimilar(Simadd)
   }, [productID])
   const {
     product: name,
     productIMG,
     price,
-    info,
-    inTheBox,
     id,
+    detail,
     gallery,
-    featureDesc1,
-    featureDesc2,
+    Weight,
+    Source,
+    Resolution,
+    Color_Brightness,
+    White_Brightness,
+    Contrast_Ratio,
+    Portability,
+    Model_Number,
+    Light_Source_Life_Economy_Mode,
+    Light_Source_Life_Normal_Mode,
+    Aspect_Ratio,
     feature,
-    cartImg,
-    preference,
+    Brand,
   } = product
   let seso = []
-  if (productIMG) {
-    seso = productIMG.split('/')
-  }
+  // if (productIMG) {
+  //   seso = productIMG.split('/')
+  // }
+  // useEffect(() => {
+  //   let Simadd = []
+  //   data.forEach((pros) => {
+  //     const { price: comp } = pros
+  //     console.log(Math.abs(comp - price), comp, price)
+  //     if (Math.abs(comp - price) <= 3000) {
+  //       Simadd.push(pros)
+  //     }
+  //   })
+  //   setSimilar(Simadd)
+  //   console.log(similar, Simadd, 'similar')
+  // }, [productID])
   if (loading) return <h1>Loading...</h1>
   return (
     <>
@@ -50,53 +94,63 @@ function ProductPage() {
           go back
         </button>
 
-        <section className='ProductCat MaxWrapper'>
-          <picture>
-            <source
-              media='(min-width:1024px)'
-              srcSet={`/assets/${seso[0]}/desktop/${seso[2]}`}
-            />
-            <source
-              media='(min-width:770px)'
-              srcSet={`/assets/${seso[0]}/tablet/${seso[2]}`}
-            />
-            <source
-              media='(max-width:769px)'
-              srcSet={`/assets/${seso[0]}/mobile/${seso[2]}`}
-            />
-            <img src={`assets/${seso[0]}/desktop/${seso[2]}`} alt={name} />
-          </picture>
-          <article className='details'>
-            <p className='desc'>{feature}</p>
-            <h1>{name}</h1>
-            <p className='paraDetail'>{info}</p>
-            <span className='spanPrice'>$ {price}</span>
-            <div>
-              <div className='addMore'>
-                <button
-                  onClick={() => {
-                    if (num !== 1) {
-                      setNum(num - 1)
-                    }
-                  }}
-                >
-                  -
-                </button>
-                {num}
-                <button onClick={() => setNum(num + 1)}>+</button>
-              </div>
-              <button
-                onClick={() => {
-                  add(id, num)
-                }}
-                className='toCart seePro'
-              >
-                add to cart
-              </button>
+        <section className='ProductCat '>
+          <article className='gallary'>
+            <div className='viewed'>
+              {gallery.map((galArr, index) => {
+                const [src] = galArr
+                return (
+                  <img
+                    key={index}
+                    className={sel === index ? `yes notYou` : `notYou`}
+                    src={`../src/assets/${src}`}
+                    alt=''
+                  />
+                )
+              })}
+            </div>
+            <div className='other'>
+              {gallery.map((galArr, index) => {
+                const [src] = galArr
+                return (
+                  <img
+                    onMouseEnter={() => {
+                      setSelected(index)
+                    }}
+                    onTouchStart={() => {
+                      setSelected(index)
+                    }}
+                    key={index}
+                    src={`../src/assets/${src}`}
+                    alt=''
+                  />
+                )
+              })}
             </div>
           </article>
+          <article className='details'>
+            <h1>{detail}</h1>
+            <span className='spanPrice'>{price}</span>
+            <h3>Product Details:</h3>
+            <ul>
+              <li>Brand name: {Brand} </li>
+              <li>Model: {Model_Number}</li>
+              <li>Source: {Source}</li>
+              <li>Resolution: {Resolution}</li>
+              <li>Weight: {Weight}</li>
+              <li>Color Brightness: {Color_Brightness}</li>
+              <li>Contrast Ratio: {Contrast_Ratio}</li>
+              <li>
+                Light Source Life Economy Mode: {Light_Source_Life_Economy_Mode}
+              </li>
+              <li>
+                Light Source Life Normal Mode: {Light_Source_Life_Normal_Mode}
+              </li>
+              <li>Aspect Ratio: {Aspect_Ratio}</li>
+            </ul>
+          </article>
         </section>
-        <section className='moreInfo MaxWrapper'>
+        {/* <section className='moreInfo MaxWrapper'>
           <div>
             <h4>feature</h4>
             <p>{featureDesc1}</p>
@@ -115,8 +169,8 @@ function ProductPage() {
               })}
             </ul>
           </div>
-        </section>
-        <section className='gallary MaxWrapper'>
+        </section> */}
+        {/* <section className='gallary MaxWrapper'>
           {gallery.map((arr) => {
             let rero = arr[0].split('/')
             return (
@@ -137,8 +191,8 @@ function ProductPage() {
               </picture>
             )
           })}
-        </section>
-        <section className='mayAlos MaxWrapper'>
+        </section> */}
+        {/* <section className='mayAlos MaxWrapper'>
           <h2>you may also like</h2>
           {preference.map((pro) => {
             const { alt, link, product, url } = pro
@@ -168,9 +222,41 @@ function ProductPage() {
               </article>
             )
           })}
+        </section> */}
+        {/* <Category></Category> */}
+        {/* <Bringing></Bringing> */}
+        <section className='mayAlos'>
+          <h2>Similar Products</h2>
+          {similar.map((prod, index) => {
+            const {
+              product,
+              feature,
+              detail,
+              label,
+              alt,
+              src,
+              price,
+              link,
+              productIMG,
+              id,
+            } = prod
+
+            return (
+              <ProductCat
+                key={id}
+                product={product}
+                feature={feature}
+                detail={detail}
+                label={label}
+                alt={alt}
+                place={productIMG}
+                price={price}
+                link={link}
+                turn={index % 2 == 0}
+              ></ProductCat>
+            )
+          })}
         </section>
-        <Category></Category>
-        <Bringing></Bringing>
       </main>
       <Footer></Footer>
     </>

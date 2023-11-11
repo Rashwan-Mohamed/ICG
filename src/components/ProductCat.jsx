@@ -15,9 +15,10 @@ function ProductCat({
 }) {
   let seso = place.split('/')
   const width = useWidth()
+  console.log(place)
   return (
-    <section className='ProductCat MaxWrapper'>
-      {(turn || width < 768) && (
+    <section className='ProductCat '>
+      {/* {(turn || width < 768) && (
         <picture>
           <source
             media='(min-width:768px)'
@@ -33,16 +34,17 @@ function ProductCat({
           />
           <img src={`/assets/${seso[0]}/desktop/${seso[2]}`} alt={alt} />
         </picture>
-      )}
-
+      )} */}
+      <img src={`/src/assets/${place}`} alt='' />
       <article className='details'>
         <p className='desc'>{feature}</p>
         <h1>{product}</h1>
         <p className='paraDetail'>{detail}</p>
+        <h3>{price}</h3>
         <SeeProduct where={link} sases={'seeProduct'}></SeeProduct>
       </article>
 
-      {!turn && width > 768 && (
+      {/* {!turn && width > 768 && (
         <picture>
           <source
             media='(min-width:768px)'
@@ -58,7 +60,7 @@ function ProductCat({
           />
           <img src={`/assets/${seso[0]}/desktop/${seso[2]}`} alt={alt} />
         </picture>
-      )}
+      )} */}
     </section>
   )
 }

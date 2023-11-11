@@ -13,7 +13,7 @@ function Headphones() {
       <header className='headHeader'>
         <h1>Products</h1>
       </header>
-      <main className='headMain'>
+      <main className='headMain '>
         {HEADPHONES.map((prod, index) => {
           const {
             product,
@@ -41,9 +41,9 @@ function Headphones() {
             ></ProductCat>
           )
         })}
-        <Category></Category>
-        <Bringing></Bringing>
       </main>
+      {/* <Category></Category> */}
+      {/* <Bringing></Bringing> */}
       <Footer></Footer>
     </>
   )

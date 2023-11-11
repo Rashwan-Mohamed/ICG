@@ -776,6 +776,7 @@ ul.cats:nth-child(5) {
 
 .headMain {
   gap: 170px 0;
+  /* max-width: var(--maxWidth); */
 }
 
 .goBack {
@@ -817,7 +818,8 @@ ul.cats:nth-child(5) {
 
 .spanPrice {
   font-weight: 700;
-  font-size: 18px;
+  font-size: 25px;
+  align-self: flex-end;
 }
 
 .details > div:nth-child(5) {
@@ -958,8 +960,9 @@ ul.cats:nth-child(5) {
 
 .mayAlos {
   display: grid;
-  grid-template-rows: auto 1fr;
+  /* grid-template-rows: auto 1fr; */
   gap: 20px 40px;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .mayAlos > article {
@@ -974,6 +977,8 @@ ul.cats:nth-child(5) {
   grid-column: 2/3;
   text-transform: uppercase;
   font-size: 30px;
+  text-align: center;
+  padding-bottom: 10px;
 }
 
 .mayAlos > article:nth-child(2) {
@@ -995,6 +1000,9 @@ ul.cats:nth-child(5) {
 
 .productPage {
   gap: 130px 0;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  margin-bottom: 7rem;
 }
 
 .productPage .mightKnow {
@@ -1458,13 +1466,197 @@ div.select:nth-child(4) {
   font-size: 35px;
   letter-spacing: 5px;
 }
+
+.headMain {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding-left: 10rem;
+  padding-right: 10rem;
+  margin-bottom: 7rem;
+}
+
+.productPage .ProductCat {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.headMain .ProductCat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
+}
+
+.ProductCat article {
+  /* text-align: left; */
+  text-align: center;
+  align-items: center;
+}
+
+.ProductCat article {
+  gap: 15px 0;
+}
+
+.details h1 {
+  /* font-size: 40px; */
+  font-size: 25px;
+}
+
+/* section.ProductCat > img {
+  width: 250px;
+} */
+section.ProductCat:nth-child(1) > article:nth-child(2) > h3:nth-child(4) {
+  font-size: 18px;
+}
+.headMain .paraDetail {
+  max-width: 75%;
+}
+
+.notYou {
+  display: none;
+  visibility: hidden;
+}
+.yes {
+  display: block !important;
+  visibility: visible !important;
+  max-width: 600px;
+}
+article.gallary {
+  /* width: 50%; */
+  flex-direction: row-reverse;
+}
+.other {
+  display: flex;
+  flex-direction: column;
+  gap: 0 10px;
+}
+.other > img {
+  cursor: pointer;
+  width: 100px;
+}
+.details > h3:nth-child(3) {
+  text-align: left;
+  align-self: flex-start;
+}
+.details > ul:nth-child(4) {
+  align-self: flex-start;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 10px 0;
+}
+.mayAlos .ProductCat {
+  display: flex;
+  flex-direction: column;
+  grid-row: 2;
+}
+
+.aboutUs > p:nth-child(1) {
+  letter-spacing: 0.5px;
+  line-height: 2;
+  font-size: 17px;
+  color: var(--grey);
+}
+.aboutUs {
+  margin-bottom: 7rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: 0.6fr 1fr;
+}
+.aboutUs > section:nth-child(2) > div:nth-child(2) > a {
+  color: black;
+  font-weight: 600;
+}
+.aboutUs > section:nth-child(2) > div:nth-child(2) {
+  display: flex;
+  flex-direction: row;
+  gap: 0 20px;
+}
+.aboutUs > section:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.aboutUs > section:nth-child(2) > ul:nth-child(4) > li {
+  font-weight: 600;
+}
+.dresso {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  color: white;
+  align-items: flex-start;
+  gap: 10px 0;
+}
+.dresso * {
+  color: white;
+}
+.bringing {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0;
+}
+.bringing picture {
+  grid-row: 1;
+}
+.bringing picture {
+  grid-column: 1/-1;
+  grid-column: 1/2;
+  place-self: unset;
+}
+.bringing > article {
+  grid-column: 2/3;
+  grid-row: 1;
+}
+.stein {
+  border-radius: 0;
+}
 /* responsivness */
 
+/* 1440- */
 @media screen and (min-width: 1440px) {
   :root {
     --maxWidth: 1200px;
   }
 }
+
+/* 1250-1440 */
+@media screen and (max-width: 1439px) {
+  .aboutUs {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .aboutUs > section:nth-child(2) > div:nth-child(2) > a {
+    font-weight: 400;
+  }
+
+  .aboutUs > section:nth-child(2) > ul:nth-child(4) > li {
+    font-weight: 400;
+  }
+
+  .aboutUs > section:nth-child(2) > div:nth-child(2) {
+    flex-direction: column;
+    gap: 35px 0;
+  }
+
+  .aboutUs > section:nth-child(2) > h4:nth-child(1) {
+    font-size: 18px;
+  }
+
+  .aboutUs > section:nth-child(2) > h4:nth-child(3) {
+    font-size: 18px;
+  }
+}
+/* 1024-1250 */
 @media screen and (max-width: 1250px) {
   :root {
     --maxWidth: 90%;
@@ -1511,8 +1703,51 @@ div.select:nth-child(4) {
   .checkoutMain {
     gap: 20px 30px;
   }
+  .heleft > h1:nth-child(2) {
+    font-size: 3rem;
+  }
+  .heleft > p:nth-child(3) {
+    font-size: 16px;
+  }
+  .seePro {
+    padding: 0.8rem 1.5rem;
+  }
+  .homeHeader {
+    background-position-x: 75%;
+  }
+  .stein > article:nth-child(2) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 3rem;
+  }
+  .stein {
+    max-height: 80vh;
+  }
+  .stein > article:nth-child(2) > p:nth-child(2) {
+    font-size: 16px;
+  }
+  section.z7x:nth-child(2) {
+    max-width: unset !important;
+  }
+  .bringing {
+    height: 50vh;
+  }
+  .MaxWrapper {
+    max-width: 100% !important;
+  }
+  section.z7x:nth-child(2) > p:nth-child(2) {
+    max-width: 50%;
+  }
+  .headMain {
+    padding-left: 0rem;
+    padding-right: 0;
+  }
+  .aboutUs {
+    grid-template-columns: 1.5fr 1fr;
+  }
 }
 
+/* 768px-1023 */
 @media screen and (max-width: 1023px) {
   .navWrapper {
     padding: 2rem 2rem 2.2rem 2rem;
@@ -1640,7 +1875,49 @@ div.select:nth-child(4) {
   .checkoutMain .carto {
     grid-template-rows: auto auto auto auto;
   }
+  .homeHeader {
+    height: 90vh;
+    background-size: cover;
+    background-position-x: 61%;
+  }
+  .heleft {
+    max-width: 60%;
+    padding-top: 1.5rem;
+  }
+  main {
+    padding-left: 0rem;
+    padding-right: 0;
+  }
+  .bringing {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 2rem;
+    gap: 0;
+    padding-bottom: 0;
+  }
+  .bringing picture {
+    height: auto;
+  }
+  section.ProductCat > img:nth-child(1) {
+    height: 80px;
+  }
+  .details h1 {
+    font-size: 20px;
+  }
+  .details .seePro {
+    padding: 0.8rem 0.8rem;
+  }
+  .desc {
+    letter-spacing: 5px;
+  }
+  .aboutUs {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
+
+/* 521px-768 */
 @media screen and (max-width: 768px) {
   .menu-button {
     display: flex;
@@ -1708,7 +1985,7 @@ div.select:nth-child(4) {
   }
 
   .homeHeader {
-    background-image: url('/src/assets/home/tablet/image-header.jpg');
+    background-image: url('/src/assets/icg/projector-all-kv-m.webp');
     background-position: center;
     background-size: contain;
   }
@@ -1717,11 +1994,28 @@ div.select:nth-child(4) {
     justify-content: center;
   }
   .heleft {
-    gap: 40px 0;
+    /* gap: 40px 0; */
     justify-content: center;
     align-items: center;
     text-align: center;
     max-width: 100%;
+    height: 80%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 50px auto auto;
+    gap: 0;
+    grid-template-rows: 50px auto 0px 1fr 1fr;
+  }
+  .seePro {
+    grid-row: -1;
+    justify-self: center;
+  }
+  .heleft > p:nth-child(3) {
+    grid-row: 5;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-self: center;
   }
   .heleft > p:nth-child(3) {
     max-width: 450px;
@@ -1768,6 +2062,10 @@ div.select:nth-child(4) {
     gap: 50px 0;
     padding: 2rem 4rem;
     background-position: center;
+    padding: 2rem;
+    justify-content: space-around;
+    gap: 0;
+    padding: 2rem 0;
   }
   .stein > article:nth-child(2) {
     align-items: center;
@@ -1972,13 +2270,82 @@ div.select:nth-child(4) {
   .disPro > li:nth-child(1) > span:nth-child(3) {
     justify-self: flex-start;
   }
+  .stein > article:nth-child(2) > h1:nth-child(1) {
+    font-size: 3.5rem;
+    font-size: 3.2rem;
+  }
+  .stein > picture:nth-child(1) {
+    width: auto;
+    height: 45%;
+  }
+  .z7x {
+    height: 55vh;
+    padding: 1rem;
+  }
+  .z7x > h2:nth-child(1) {
+    font-size: 46px;
+    font-size: 40px;
+  }
+  .yx1 {
+    height: 70vh;
+  }
+
+  main {
+    margin-top: 4rem;
+  }
+
+  .headMain {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  section.ProductCat > article > h1:nth-child(2) {
+    font-size: 25px;
+  }
+
+  .aboutUs {
+    padding-right: 1rem;
+    gap: 0 35px;
+  }
+
+  .aboutUs > p:nth-child(1) {
+    letter-spacing: 0.35px;
+    font-size: 16px;
+  }
+
+  .aboutUs {
+    display: flex;
+    gap: 50px 0;
+    flex-direction: column;
+  }
+
+  .aboutUs > section:nth-child(2) {
+    flex-direction: row;
+    gap: 50px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .aboutUs > section:nth-child(2) > h4:nth-child(1) {
+    font-size: 16px;
+  }
+  .aboutUs > section:nth-child(2) > h4:nth-child(3) {
+    font-size: 16px;
+  }
+  .aboutUs > section:nth-child(2) > div:nth-child(2) {
+    gap: 25px 0;
+  }
 }
 
 @media screen and (max-width: 520px) {
   .homeHeader {
     background-image: url('/src/assets/home/mobile/image-header.jpg');
   }
-
+  .homeHeader {
+    background-image: url('/src/assets/icg/projector-all-kv-m.webp');
+    background-position: center;
+    background-size: contain;
+  }
   .heleft > h1:nth-child(2) {
     font-size: 2.5rem;
   }
@@ -2200,5 +2567,39 @@ div.select:nth-child(4) {
   }
   .carto {
     width: fit-content;
+  }
+  .heleft {
+    height: 80%;
+    grid-template-rows: 50px auto 0px 1fr 1fr;
+    height: 75%;
+    grid-template-rows: 50px auto 90px 1fr 1fr;
+    gap: 10px 0;
+  }
+  .bringing {
+    gap: 0;
+    justify-content: center;
+    padding: 0;
+  }
+  .z7x > h2:nth-child(1) {
+    text-align: center;
+  }
+  .z7x {
+    height: 55vh;
+    height: 70vh;
+  }
+  .stein {
+    padding: 2rem 0;
+  }
+  .z7x {
+    background-size: cover;
+    background-position: center;
+  }
+  .stein > picture:nth-child(1) {
+    width: auto;
+    height: auto;
+    display: none;
+  }
+  .headMain {
+    grid-template-columns: 1fr;
   }
 }
