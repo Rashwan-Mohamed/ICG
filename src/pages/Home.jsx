@@ -38,18 +38,18 @@ function Home() {
           <picture>
             <source
               media='(min-width:1024px)'
-              srcSet='src/assets/icg/homepage-hero-banner-0911-03-1.webp'
+              srcSet='/assets/icg/homepage-hero-banner-0911-03-1.webp'
             />
             <source
               media='(min-width:521px)'
-              srcSet='src/assets/icg/homepage-hero-banner-0911-03-1.webp'
+              srcSet='assets/icg/homepage-hero-banner-0911-03-1.webp'
             />
             <source
               media='(max-width:520px)'
-              srcSet='src/assets/icg/homepage-hero-banner-0911-03-1.webp'
+              srcSet='assets/icg/homepage-hero-banner-0911-03-1.webp'
             />
             <img
-              src='src/assets/icg/homepage-hero-banner-0911-03-1.webp'
+              src='assets/icg/homepage-hero-banner-0911-03-1.webp'
               alt='zx9-speaker'
             />
           </picture>
