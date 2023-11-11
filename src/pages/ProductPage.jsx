@@ -103,7 +103,7 @@ function ProductPage() {
                   <img
                     key={index}
                     className={sel === index ? `yes notYou` : `notYou`}
-                    src={`../src/assets/${src}`}
+                    src={`../assets/${src}`}
                     alt=''
                   />
                 )
