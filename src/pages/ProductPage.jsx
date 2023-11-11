@@ -121,7 +121,7 @@ function ProductPage() {
                       setSelected(index)
                     }}
                     key={index}
-                    src={`../src/assets/${src}`}
+                    src={`../assets/${src}`}
                     alt=''
                   />
                 )
