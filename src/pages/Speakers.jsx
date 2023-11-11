@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { SPEAKERS } from '../data/CategoryData'
+// import { SPEAKERS } from '../data/CategoryData'
 import ProductCat from '../components/ProductCat'
 import Category from '../components/Category'
 import Bringing from '../components/Bringing'
@@ -14,7 +14,7 @@ function Speakers() {
         <h1>speakers</h1>
       </header>
       <main className='headMain'>
-        {SPEAKERS.map((prod, index) => {
+        {/* {SPEAKERS.map((prod, index) => {
           const { product, feature, detail, label, alt, src, price, link } =
             prod
           return (
@@ -31,7 +31,7 @@ function Speakers() {
               turn={index % 2 == 0}
             ></ProductCat>
           )
-        })}
+        })} */}
         <Category></Category>
         <Bringing></Bringing>
       </main>

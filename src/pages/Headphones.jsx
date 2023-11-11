@@ -11,12 +11,21 @@ function Headphones() {
   return (
     <>
       <header className='headHeader'>
-        <h1>headphones</h1>
+        <h1>Products</h1>
       </header>
       <main className='headMain'>
         {HEADPHONES.map((prod, index) => {
-          const { product, feature, detail, label, alt, src, price, link } =
-            prod
+          const {
+            product,
+            feature,
+            detail,
+            label,
+            alt,
+            src,
+            price,
+            link,
+            productIMG,
+          } = prod
           return (
             <ProductCat
               key={product}
@@ -25,7 +34,7 @@ function Headphones() {
               detail={detail}
               label={label}
               alt={alt}
-              place={src}
+              place={productIMG}
               price={price}
               link={link}
               turn={index % 2 == 0}

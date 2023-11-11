@@ -2,7 +2,7 @@
 import { Link } from 'react-router-dom'
 function Category({ setOpen }) {
   return (
-    <section className='mightKnow'>
+    <section className='mightKnow MaxWrapper'>
       <Link
         onClick={() => {
           if (setOpen) {
@@ -13,18 +13,15 @@ function Category({ setOpen }) {
       >
         <picture>
           <img
-            src='/assets/shared/desktop/image-headphones.png'
+            src='src\assets\icg\w2710-gallery-1-2.webp'
             alt='mark-one-headphones'
           />
         </picture>{' '}
-        <h5>headphone</h5>
+        <h5>Projectors</h5>
         <div>
           shop{' '}
           <span>
-            <img
-              src='/assets/shared/desktop/icon-arrow-right.svg'
-              alt='shop'
-            />
+            <img src='/assets/shared/desktop/icon-arrow-right.svg' alt='shop' />
           </span>
         </div>
       </Link>
@@ -42,14 +39,11 @@ function Category({ setOpen }) {
             alt='mark-one-headphones'
           />
         </picture>{' '}
-        <h5>speakers</h5>
+        <h5>Laptops</h5>
         <div>
           shop{' '}
           <span>
-            <img
-              src='/assets/shared/desktop/icon-arrow-right.svg'
-              alt='shop'
-            />
+            <img src='/assets/shared/desktop/icon-arrow-right.svg' alt='shop' />
           </span>
         </div>
       </Link>{' '}
@@ -67,14 +61,11 @@ function Category({ setOpen }) {
             alt='mark-one-headphones'
           />
         </picture>{' '}
-        <h5>earphones</h5>
+        <h5>accessories</h5>
         <div>
           shop{' '}
           <span>
-            <img
-              src='/assets/shared/desktop/icon-arrow-right.svg'
-              alt='shop'
-            />
+            <img src='/assets/shared/desktop/icon-arrow-right.svg' alt='shop' />
           </span>
         </div>
       </Link>

@@ -5,89 +5,108 @@ import SeeProduct from '../components/SeeProduct'
 import Bringing from '../components/Bringing'
 import Footer from '../components/Footer'
 function Home() {
-    useEffect(() => {
-      scrollTo(0, 0)
-    }, [])
+  useEffect(() => {
+    scrollTo(0, 0)
+  }, [])
   const naviage = useNavigate()
   return (
     <>
       <header className='homeHeader'>
         <div className='wrapper'>
           <article className='heleft'>
-            <p className='newProduct'>NEW PRODUCT</p>
-            <h1>XX99 MARK II HEADPHONES</h1>
+            <p className='newProduct'>Home Cinema Projector</p>
+            <h1> The Feature of Data show</h1>
             <p>
-              Experience natural, lifelike audio and exceptional build quality
-              made for the passionate music enthusiast.
+              Experience innovative cinematic visuals and immersive
+              entertainment with new ICG home projectors. Busk in authentic
+              colors and bright and dark details supported by CinematicColor and
+              HDR-PRO technologies in your home cinema for the most genuine,
+              eye-popping experiences.
             </p>
             <button
               onClick={() => naviage('/product_detail/xx99-mark-ii')}
               className='seePro'
             >
-              SEE PRODUCT
+              SEE PRODUCTS
             </button>
           </article>
         </div>
       </header>
       <main>
-        <Category></Category>
-        <section className='stein'>
+        {/* <Category></Category> */}
+        <section className='stein '>
           <picture>
             <source
               media='(min-width:1024px)'
-              srcSet='/assets/home/desktop/image-speaker-zx9.png'
+              srcSet='src/assets/icg/homepage-hero-banner-0911-03-1.webp'
             />
             <source
               media='(min-width:521px)'
-              srcSet='/assets/home/tablet/image-speaker-zx9.png'
+              srcSet='src/assets/icg/homepage-hero-banner-0911-03-1.webp'
             />
             <source
               media='(max-width:520px)'
-              srcSet='/assets/home/mobile/image-speaker-zx9.png'
+              srcSet='src/assets/icg/homepage-hero-banner-0911-03-1.webp'
             />
             <img
-              src='/assets/home/desktop/image-speaker-zx9.png'
+              src='src/assets/icg/homepage-hero-banner-0911-03-1.webp'
               alt='zx9-speaker'
             />
           </picture>
           <article>
-            <h1>ZX9 SPEAKER</h1>
+            <h1>Business Projectors</h1>
             <p>
-              Upgrade to premium speakers that are phenomenally built to deliver
-              truly remarkable sound.
+              Bring greater clarity and collaboration to your business with ICG
+              projectors, designed to fit your budget while supporting today’s
+              workplace needs, including wireless mobility and a low cost of
+              ownership.
             </p>
-            <SeeProduct where={'/product_detail/zx9'}></SeeProduct>
+            <SeeProduct
+              custome={'custom'}
+              where={'/product_detail/zx9'}
+            ></SeeProduct>
           </article>
         </section>
-        <section className='z7x'>
-          <h2>ZX7 SPEAKER</h2>
+        <section className='z7x MaxWrapper'>
+          <h2>Education Projectors</h2>
+          <p>
+            From small classrooms to large auditoriums, ICG line of multimedia
+            projectors, displays are designed to be reliable and offer a low
+            total cost of ownership that makes them ideal education investments.
+          </p>
           <SeeProduct where={'/product_detail/zx9'}></SeeProduct>
         </section>
-        <section className='yx1'>
-          <picture>
-            <source
-              srcSet='/assets/home/desktop/image-earphones-yx1.jpg'
-              media='(min-width:1024px)'
-            />
-            <source
-              srcSet='/assets/home/tablet/image-earphones-yx1.jpg'
-              media='(min-width:521px)'
-            />
-            <source
-              srcSet='/assets/home/mobile/image-earphones-yx1.jpg'
-              media='(max-width:520px)'
-            />
-            <img
-              src='/assets/home/desktop/image-earphones-yx1.jpg'
-              alt='speaker-zx7'
-            />
-          </picture>
+        <Bringing></Bringing>
+        <section className='yx1 '>
           <section className='z7x'>
-            <h2>YX1 EARPHONES</h2>
+            <h2>Large Venue Projectors</h2>
+            <p>
+              For lecture halls, auditoriums, sanctuaries, events, and digital
+              signage, these high-lumen projectors provide uncompromising image
+              quality, brilliant video and professional-grade reliability.
+            </p>
             <SeeProduct where={'/product_detail/yx1'}></SeeProduct>
+            <picture>
+              <source
+                srcSet='src\assets\icg\large-venue-projectors_bg_largevenueprinters.jpg'
+                media='(min-width:1024px)'
+              />
+              <source
+                srcSet='src\assets\icg\large-venue-projectors_bg_largevenueprinters.jpg'
+                media='(min-width:521px)'
+              />
+              <source
+                srcSet='src\assets\icg\large-venue-projectors_bg_largevenueprinters.jpg'
+                media='(max-width:520px)'
+              />
+              <img
+                src='src\assets\icg\large-venue-projectors_bg_largevenueprinters.jpg'
+                alt='speaker-zx7'
+              />
+            </picture>
           </section>
         </section>
-        <Bringing></Bringing>
+        {/* <Bringing></Bringing> */}
       </main>
       <Footer></Footer>
     </>

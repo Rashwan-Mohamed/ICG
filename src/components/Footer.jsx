@@ -10,7 +10,7 @@ function Footer({ className }) {
 
         <picture className='footerHero'>
           <source
-            srcSet='\assets\shared\desktop\logo.svg '
+            srcSet='src\assets\icg\_0ee01b00-7a86-4f82-a0fe-e0bb9d3cfda3.jpg'
             sizes='(min-width:1024px)'
           />
           <source
@@ -21,16 +21,14 @@ function Footer({ className }) {
             srcSet='\assets\shared\mobile\logo.svg'
             media='(max-width:480px)'
           />
-          <img
-            srcSet='\assets\shared\desktop\logo.svg'
-            alt='audiophile logo'
-          />
+          <img srcSet='\assets\shared\desktop\logo.svg' alt='audiophile logo' />
         </picture>
         <p className='audioSpecialist'>
-          Audiophile is an all in one stop to fulfill your audio needs. We're a
-          small team of music lovers and sound specialists who are devoted to
-          helping you get the most out of personal audio. Come and visit our
-          demo facility - we’re open 7 days a week.
+          ICG is your ultimate destination for data show projectors. We’re a
+          passionate group of experts who are dedicated to helping you find the
+          best projector for your needs. Come and check out our online showroom
+          - we have a wide range of models and features to suit any budget and
+          preference.
         </p>
         <h4 className='copyRight'>Copyright {year}. All Rights Reserved</h4>
 

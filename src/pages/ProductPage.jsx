@@ -50,7 +50,7 @@ function ProductPage() {
           go back
         </button>
 
-        <section className='ProductCat'>
+        <section className='ProductCat MaxWrapper'>
           <picture>
             <source
               media='(min-width:1024px)'
@@ -96,7 +96,7 @@ function ProductPage() {
             </div>
           </article>
         </section>
-        <section className='moreInfo'>
+        <section className='moreInfo MaxWrapper'>
           <div>
             <h4>feature</h4>
             <p>{featureDesc1}</p>
@@ -116,7 +116,7 @@ function ProductPage() {
             </ul>
           </div>
         </section>
-        <section className='gallary'>
+        <section className='gallary MaxWrapper'>
           {gallery.map((arr) => {
             let rero = arr[0].split('/')
             return (
@@ -133,15 +133,12 @@ function ProductPage() {
                   srcSet={`/assets/${rero[0]}/mobile/${rero[2]}`}
                   media='(max-width:520px)'
                 />
-                <img
-                  src={`/assets/${rero[0]}/desktop/${rero[2]}`}
-                  alt={name}
-                />
+                <img src={`/assets/${rero[0]}/desktop/${rero[2]}`} alt={name} />
               </picture>
             )
           })}
         </section>
-        <section className='mayAlos'>
+        <section className='mayAlos MaxWrapper'>
           <h2>you may also like</h2>
           {preference.map((pro) => {
             const { alt, link, product, url } = pro

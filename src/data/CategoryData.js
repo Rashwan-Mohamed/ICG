@@ -1,67 +1,794 @@
 export const HEADPHONES = [
-    {
-        product: 'XX99 Mark II\nHeadphones',
-        feature:'new product',
-        detail:`The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.`,
-        label: `link to XX99 Mark II headphone product detail page`,
-        alt:`XX99 Mark II Headphone product image`,
-        src:`category-headphones/desktop/image-xx99-mark-two.jpg`,
-        price:'$2,999',
-        link:'/product_detail/xx99-mark-ii'
-    },
-    {
-        product:'XX99 Mark I\nHeadphones',
-        feature:'',
-        detail:`As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.`,
-        label:`link to XX99 Mark I headphone product detail page`,
-        alt:`XX99 Mark II Headphone product image`,
-        src:`category-headphones/desktop/image-xx99-mark-one.jpg`,
-        price:'$1,750',
-        link:'/product_detail/xx99-mark-i'
-    },
-    {
-        product: 'XX59\nHeadphones',
-        feature:'',
-        detail:`Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.`,
-        label:`link to XX59 headphone product detail page`,
-        alt:`XX59 Headphone product image`,
-        src:`category-headphones/desktop/image-xx59.jpg`,
-        price:'$899',
-        link:'/product_detail/xx59'
-    },
-]
-export const SPEAKERS = [
-    {
-        product: 'ZX9\nSpeaker',
-        feature:'new product',
-        detail:`Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.`,
-        label:`link to ZX9 Speaker product detail page`,
-        alt:`ZX9 Speaker product image`,
-        src:`category-speakers/desktop/image-zx9.jpg`,
-        price:'$4,500',
-        link:'/product_detail/zx9'
-    },
-    {
-        product: 'ZX7\nSpeaker',
-        feature:'',
-        detail:`Stream high quality sound wirelessly with minimal to no loss. The ZX7 speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.`,
-        label: `link to ZX7 Speaker product detail page`,
-        alt:`ZX7 Speaker product image`,
-        src:`category-speakers/desktop/image-zx7.jpg`,
-        price:'$3,500',
-        link:'/product_detail/zx7'
-    },
-
-]
-export const EARPHONES = [
-    {
-        product: 'YX1 Wireless\nEarphones',
-        feature:'new product',
-        detail:`Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.`,
-        label: `link to XYX1 Wireless Earphone product detail page`,
-        alt:`YX1 Wireless Earphones product image`,
-        src:`category-earphones/desktop/image-yx1-earphones.jpg`,
-        price:'$599',
-        link:'/product_detail/yx1'
-    }
+  {
+    product: `BenQ - TK700STi`, //الاسم ب اختصار
+    Brand: 'BenQ', //الماركة
+    feature: 'new product', //جديد ولا مستعمل
+    productIMG: 'icg/products/TK700STi/6479690_sd.jpg',
+    detail: `BenQ - TK700STi Smart 4K HDR Short Throw Gaming Projector, Low Input Lag, Enhanced Game Modes, 3000 Lumens - White`, //الاسم بالتفصيل
+    label: `link to BenQ - TK700STi product detail page`, //سيبك
+    alt: `BenQ - TK700STi Smart 4K HDR Short Throw Gaming Projector`, //سيبك
+    src: `icg/products/TK700STi`,
+    price: '$2,999', //السعر
+    link: '/product_detail/TK700STi',
+    Weight: '2kgs', //باقيت التفاصيل ضيف زي ما تحب
+    Source: 'Lamp',
+    Resolution: '4K (2160p)',
+    Color_Brightness: '3000 lumens',
+    White_Brightness: `3000 lumens`,
+    Contrast_Ratio: `10,000:1`,
+    Projector_Use: `Gaming, Home Theater`,
+    Portability: `Fixed`,
+    Model_Number: `TK700STi`,
+    Light_Source_Life_Economy_Mode: `10000 hours`,
+    Light_Source_Life_Normal_Mode: `4000 hours`,
+    Aspect_Ratio: `16:9`,
+    Minimum_Projector_Distance: `4.3 feet`,
+    Maximum_Projector_Distance: `14 feet`,
+    Minimum_Viewable_Screen_Size: `60 inches`,
+    Maximum_Viewable_Screen_Size: `200 inches`,
+    gallery: [
+      ['icg/products/TK700STi/6479690cv11d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv12d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv13d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv14d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv15d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv16d.jpg', 'random picture'],
+    ],
+  },
+  {
+    product: `BenQ - TK700STi`, //الاسم ب اختصار
+    Brand: 'BenQ', //الماركة
+    feature: 'new product', //جديد ولا مستعمل
+    productIMG: 'icg/products/TK700STi/6479690_sd.jpg',
+    detail: `BenQ - TK700STi Smart 4K HDR Short Throw Gaming Projector, Low Input Lag, Enhanced Game Modes, 3000 Lumens - White`, //الاسم بالتفصيل
+    label: `link to BenQ - TK700STi product detail page`, //سيبك
+    alt: `BenQ - TK700STi Smart 4K HDR Short Throw Gaming Projector`, //سيبك
+    src: `icg/products/TK700STi`,
+    price: '$2,999', //السعر
+    link: '/product_detail/TK700STi',
+    Weight: '2kgs', //باقيت التفاصيل ضيف زي ما تحب
+    Source: 'Lamp',
+    Resolution: '4K (2160p)',
+    Color_Brightness: '3000 lumens',
+    White_Brightness: `3000 lumens`,
+    Contrast_Ratio: `10,000:1`,
+    Projector_Use: `Gaming, Home Theater`,
+    Portability: `Fixed`,
+    Model_Number: `TK700STi`,
+    Light_Source_Life_Economy_Mode: `10000 hours`,
+    Light_Source_Life_Normal_Mode: `4000 hours`,
+    Aspect_Ratio: `16:9`,
+    Minimum_Projector_Distance: `4.3 feet`,
+    Maximum_Projector_Distance: `14 feet`,
+    Minimum_Viewable_Screen_Size: `60 inches`,
+    Maximum_Viewable_Screen_Size: `200 inches`,
+    gallery: [
+      ['icg/products/TK700STi/6479690cv11d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv12d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv13d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv14d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv15d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv16d.jpg', 'random picture'],
+    ],
+  },
+  {
+    product: `BenQ - TK700STi`, //الاسم ب اختصار
+    Brand: 'BenQ', //الماركة
+    feature: 'new product', //جديد ولا مستعمل
+    productIMG: 'icg/products/TK700STi/6479690_sd.jpg',
+    detail: `BenQ - TK700STi Smart 4K HDR Short Throw Gaming Projector, Low Input Lag, Enhanced Game Modes, 3000 Lumens - White`, //الاسم بالتفصيل
+    label: `link to BenQ - TK700STi product detail page`, //سيبك
+    alt: `BenQ - TK700STi Smart 4K HDR Short Throw Gaming Projector`, //سيبك
+    src: `icg/products/TK700STi`,
+    price: '$2,999', //السعر
+    link: '/product_detail/TK700STi',
+    Weight: '2kgs', //باقيت التفاصيل ضيف زي ما تحب
+    Source: 'Lamp',
+    Resolution: '4K (2160p)',
+    Color_Brightness: '3000 lumens',
+    White_Brightness: `3000 lumens`,
+    Contrast_Ratio: `10,000:1`,
+    Projector_Use: `Gaming, Home Theater`,
+    Portability: `Fixed`,
+    Model_Number: `TK700STi`,
+    Light_Source_Life_Economy_Mode: `10000 hours`,
+    Light_Source_Life_Normal_Mode: `4000 hours`,
+    Aspect_Ratio: `16:9`,
+    Minimum_Projector_Distance: `4.3 feet`,
+    Maximum_Projector_Distance: `14 feet`,
+    Minimum_Viewable_Screen_Size: `60 inches`,
+    Maximum_Viewable_Screen_Size: `200 inches`,
+    gallery: [
+      ['icg/products/TK700STi/6479690cv11d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv12d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv13d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv14d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv15d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv16d.jpg', 'random picture'],
+    ],
+  },
+  {
+    product: `BenQ - TK700STi`, //الاسم ب اختصار
+    Brand: 'BenQ', //الماركة
+    feature: 'new product', //جديد ولا مستعمل
+    productIMG: 'icg/products/TK700STi/6479690_sd.jpg',
+    detail: `BenQ - TK700STi Smart 4K HDR Short Throw Gaming Projector, Low Input Lag, Enhanced Game Modes, 3000 Lumens - White`, //الاسم بالتفصيل
+    label: `link to BenQ - TK700STi product detail page`, //سيبك
+    alt: `BenQ - TK700STi Smart 4K HDR Short Throw Gaming Projector`, //سيبك
+    src: `icg/products/TK700STi`,
+    price: '$2,999', //السعر
+    link: '/product_detail/TK700STi',
+    Weight: '2kgs', //باقيت التفاصيل ضيف زي ما تحب
+    Source: 'Lamp',
+    Resolution: '4K (2160p)',
+    Color_Brightness: '3000 lumens',
+    White_Brightness: `3000 lumens`,
+    Contrast_Ratio: `10,000:1`,
+    Projector_Use: `Gaming, Home Theater`,
+    Portability: `Fixed`,
+    Model_Number: `TK700STi`,
+    Light_Source_Life_Economy_Mode: `10000 hours`,
+    Light_Source_Life_Normal_Mode: `4000 hours`,
+    Aspect_Ratio: `16:9`,
+    Minimum_Projector_Distance: `4.3 feet`,
+    Maximum_Projector_Distance: `14 feet`,
+    Minimum_Viewable_Screen_Size: `60 inches`,
+    Maximum_Viewable_Screen_Size: `200 inches`,
+    gallery: [
+      ['icg/products/TK700STi/6479690cv11d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv12d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv13d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv14d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv15d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv16d.jpg', 'random picture'],
+    ],
+  },
+  {
+    product: `BenQ - TK700STi`, //الاسم ب اختصار
+    Brand: 'BenQ', //الماركة
+    feature: 'new product', //جديد ولا مستعمل
+    productIMG: 'icg/products/TK700STi/6479690_sd.jpg',
+    detail: `BenQ - TK700STi Smart 4K HDR Short Throw Gaming Projector, Low Input Lag, Enhanced Game Modes, 3000 Lumens - White`, //الاسم بالتفصيل
+    label: `link to BenQ - TK700STi product detail page`, //سيبك
+    alt: `BenQ - TK700STi Smart 4K HDR Short Throw Gaming Projector`, //سيبك
+    src: `icg/products/TK700STi`,
+    price: '$2,999', //السعر
+    link: '/product_detail/TK700STi',
+    Weight: '2kgs', //باقيت التفاصيل ضيف زي ما تحب
+    Source: 'Lamp',
+    Resolution: '4K (2160p)',
+    Color_Brightness: '3000 lumens',
+    White_Brightness: `3000 lumens`,
+    Contrast_Ratio: `10,000:1`,
+    Projector_Use: `Gaming, Home Theater`,
+    Portability: `Fixed`,
+    Model_Number: `TK700STi`,
+    Light_Source_Life_Economy_Mode: `10000 hours`,
+    Light_Source_Life_Normal_Mode: `4000 hours`,
+    Aspect_Ratio: `16:9`,
+    Minimum_Projector_Distance: `4.3 feet`,
+    Maximum_Projector_Distance: `14 feet`,
+    Minimum_Viewable_Screen_Size: `60 inches`,
+    Maximum_Viewable_Screen_Size: `200 inches`,
+    gallery: [
+      ['icg/products/TK700STi/6479690cv11d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv12d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv13d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv14d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv15d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv16d.jpg', 'random picture'],
+    ],
+  },
+  {
+    product: `BenQ - TK700STi`, //الاسم ب اختصار
+    Brand: 'BenQ', //الماركة
+    feature: 'new product', //جديد ولا مستعمل
+    productIMG: 'icg/products/TK700STi/6479690_sd.jpg',
+    detail: `BenQ - TK700STi Smart 4K HDR Short Throw Gaming Projector, Low Input Lag, Enhanced Game Modes, 3000 Lumens - White`, //الاسم بالتفصيل
+    label: `link to BenQ - TK700STi product detail page`, //سيبك
+    alt: `BenQ - TK700STi Smart 4K HDR Short Throw Gaming Projector`, //سيبك
+    src: `icg/products/TK700STi`,
+    price: '$2,999', //السعر
+    link: '/product_detail/TK700STi',
+    Weight: '2kgs', //باقيت التفاصيل ضيف زي ما تحب
+    Source: 'Lamp',
+    Resolution: '4K (2160p)',
+    Color_Brightness: '3000 lumens',
+    White_Brightness: `3000 lumens`,
+    Contrast_Ratio: `10,000:1`,
+    Projector_Use: `Gaming, Home Theater`,
+    Portability: `Fixed`,
+    Model_Number: `TK700STi`,
+    Light_Source_Life_Economy_Mode: `10000 hours`,
+    Light_Source_Life_Normal_Mode: `4000 hours`,
+    Aspect_Ratio: `16:9`,
+    Minimum_Projector_Distance: `4.3 feet`,
+    Maximum_Projector_Distance: `14 feet`,
+    Minimum_Viewable_Screen_Size: `60 inches`,
+    Maximum_Viewable_Screen_Size: `200 inches`,
+    gallery: [
+      ['icg/products/TK700STi/6479690cv11d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv12d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv13d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv14d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv15d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv16d.jpg', 'random picture'],
+    ],
+  },
+  {
+    product: `BenQ - TK700STi`, //الاسم ب اختصار
+    Brand: 'BenQ', //الماركة
+    feature: 'new product', //جديد ولا مستعمل
+    productIMG: 'icg/products/TK700STi/6479690_sd.jpg',
+    detail: `BenQ - TK700STi Smart 4K HDR Short Throw Gaming Projector, Low Input Lag, Enhanced Game Modes, 3000 Lumens - White`, //الاسم بالتفصيل
+    label: `link to BenQ - TK700STi product detail page`, //سيبك
+    alt: `BenQ - TK700STi Smart 4K HDR Short Throw Gaming Projector`, //سيبك
+    src: `icg/products/TK700STi`,
+    price: '$2,999', //السعر
+    link: '/product_detail/TK700STi',
+    Weight: '2kgs', //باقيت التفاصيل ضيف زي ما تحب
+    Source: 'Lamp',
+    Resolution: '4K (2160p)',
+    Color_Brightness: '3000 lumens',
+    White_Brightness: `3000 lumens`,
+    Contrast_Ratio: `10,000:1`,
+    Projector_Use: `Gaming, Home Theater`,
+    Portability: `Fixed`,
+    Model_Number: `TK700STi`,
+    Light_Source_Life_Economy_Mode: `10000 hours`,
+    Light_Source_Life_Normal_Mode: `4000 hours`,
+    Aspect_Ratio: `16:9`,
+    Minimum_Projector_Distance: `4.3 feet`,
+    Maximum_Projector_Distance: `14 feet`,
+    Minimum_Viewable_Screen_Size: `60 inches`,
+    Maximum_Viewable_Screen_Size: `200 inches`,
+    gallery: [
+      ['icg/products/TK700STi/6479690cv11d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv12d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv13d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv14d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv15d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv16d.jpg', 'random picture'],
+    ],
+  },
+  {
+    product: `BenQ - TK700STi`, //الاسم ب اختصار
+    Brand: 'BenQ', //الماركة
+    feature: 'new product', //جديد ولا مستعمل
+    productIMG: 'icg/products/TK700STi/6479690_sd.jpg',
+    detail: `BenQ - TK700STi Smart 4K HDR Short Throw Gaming Projector, Low Input Lag, Enhanced Game Modes, 3000 Lumens - White`, //الاسم بالتفصيل
+    label: `link to BenQ - TK700STi product detail page`, //سيبك
+    alt: `BenQ - TK700STi Smart 4K HDR Short Throw Gaming Projector`, //سيبك
+    src: `icg/products/TK700STi`,
+    price: '$2,999', //السعر
+    link: '/product_detail/TK700STi',
+    Weight: '2kgs', //باقيت التفاصيل ضيف زي ما تحب
+    Source: 'Lamp',
+    Resolution: '4K (2160p)',
+    Color_Brightness: '3000 lumens',
+    White_Brightness: `3000 lumens`,
+    Contrast_Ratio: `10,000:1`,
+    Projector_Use: `Gaming, Home Theater`,
+    Portability: `Fixed`,
+    Model_Number: `TK700STi`,
+    Light_Source_Life_Economy_Mode: `10000 hours`,
+    Light_Source_Life_Normal_Mode: `4000 hours`,
+    Aspect_Ratio: `16:9`,
+    Minimum_Projector_Distance: `4.3 feet`,
+    Maximum_Projector_Distance: `14 feet`,
+    Minimum_Viewable_Screen_Size: `60 inches`,
+    Maximum_Viewable_Screen_Size: `200 inches`,
+    gallery: [
+      ['icg/products/TK700STi/6479690cv11d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv12d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv13d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv14d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv15d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv16d.jpg', 'random picture'],
+    ],
+  },
+  {
+    product: `BenQ - TK700STi`, //الاسم ب اختصار
+    Brand: 'BenQ', //الماركة
+    feature: 'new product', //جديد ولا مستعمل
+    productIMG: 'icg/products/TK700STi/6479690_sd.jpg',
+    detail: `BenQ - TK700STi Smart 4K HDR Short Throw Gaming Projector, Low Input Lag, Enhanced Game Modes, 3000 Lumens - White`, //الاسم بالتفصيل
+    label: `link to BenQ - TK700STi product detail page`, //سيبك
+    alt: `BenQ - TK700STi Smart 4K HDR Short Throw Gaming Projector`, //سيبك
+    src: `icg/products/TK700STi`,
+    price: '$2,999', //السعر
+    link: '/product_detail/TK700STi',
+    Weight: '2kgs', //باقيت التفاصيل ضيف زي ما تحب
+    Source: 'Lamp',
+    Resolution: '4K (2160p)',
+    Color_Brightness: '3000 lumens',
+    White_Brightness: `3000 lumens`,
+    Contrast_Ratio: `10,000:1`,
+    Projector_Use: `Gaming, Home Theater`,
+    Portability: `Fixed`,
+    Model_Number: `TK700STi`,
+    Light_Source_Life_Economy_Mode: `10000 hours`,
+    Light_Source_Life_Normal_Mode: `4000 hours`,
+    Aspect_Ratio: `16:9`,
+    Minimum_Projector_Distance: `4.3 feet`,
+    Maximum_Projector_Distance: `14 feet`,
+    Minimum_Viewable_Screen_Size: `60 inches`,
+    Maximum_Viewable_Screen_Size: `200 inches`,
+    gallery: [
+      ['icg/products/TK700STi/6479690cv11d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv12d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv13d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv14d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv15d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv16d.jpg', 'random picture'],
+    ],
+  },
+  {
+    product: `BenQ - TK700STi`, //الاسم ب اختصار
+    Brand: 'BenQ', //الماركة
+    feature: 'new product', //جديد ولا مستعمل
+    productIMG: 'icg/products/TK700STi/6479690_sd.jpg',
+    detail: `BenQ - TK700STi Smart 4K HDR Short Throw Gaming Projector, Low Input Lag, Enhanced Game Modes, 3000 Lumens - White`, //الاسم بالتفصيل
+    label: `link to BenQ - TK700STi product detail page`, //سيبك
+    alt: `BenQ - TK700STi Smart 4K HDR Short Throw Gaming Projector`, //سيبك
+    src: `icg/products/TK700STi`,
+    price: '$2,999', //السعر
+    link: '/product_detail/TK700STi',
+    Weight: '2kgs', //باقيت التفاصيل ضيف زي ما تحب
+    Source: 'Lamp',
+    Resolution: '4K (2160p)',
+    Color_Brightness: '3000 lumens',
+    White_Brightness: `3000 lumens`,
+    Contrast_Ratio: `10,000:1`,
+    Projector_Use: `Gaming, Home Theater`,
+    Portability: `Fixed`,
+    Model_Number: `TK700STi`,
+    Light_Source_Life_Economy_Mode: `10000 hours`,
+    Light_Source_Life_Normal_Mode: `4000 hours`,
+    Aspect_Ratio: `16:9`,
+    Minimum_Projector_Distance: `4.3 feet`,
+    Maximum_Projector_Distance: `14 feet`,
+    Minimum_Viewable_Screen_Size: `60 inches`,
+    Maximum_Viewable_Screen_Size: `200 inches`,
+    gallery: [
+      ['icg/products/TK700STi/6479690cv11d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv12d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv13d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv14d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv15d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv16d.jpg', 'random picture'],
+    ],
+  },
+  {
+    product: `BenQ - TK700STi`, //الاسم ب اختصار
+    Brand: 'BenQ', //الماركة
+    feature: 'new product', //جديد ولا مستعمل
+    productIMG: 'icg/products/TK700STi/6479690_sd.jpg',
+    detail: `BenQ - TK700STi Smart 4K HDR Short Throw Gaming Projector, Low Input Lag, Enhanced Game Modes, 3000 Lumens - White`, //الاسم بالتفصيل
+    label: `link to BenQ - TK700STi product detail page`, //سيبك
+    alt: `BenQ - TK700STi Smart 4K HDR Short Throw Gaming Projector`, //سيبك
+    src: `icg/products/TK700STi`,
+    price: '$2,999', //السعر
+    link: '/product_detail/TK700STi',
+    Weight: '2kgs', //باقيت التفاصيل ضيف زي ما تحب
+    Source: 'Lamp',
+    Resolution: '4K (2160p)',
+    Color_Brightness: '3000 lumens',
+    White_Brightness: `3000 lumens`,
+    Contrast_Ratio: `10,000:1`,
+    Projector_Use: `Gaming, Home Theater`,
+    Portability: `Fixed`,
+    Model_Number: `TK700STi`,
+    Light_Source_Life_Economy_Mode: `10000 hours`,
+    Light_Source_Life_Normal_Mode: `4000 hours`,
+    Aspect_Ratio: `16:9`,
+    Minimum_Projector_Distance: `4.3 feet`,
+    Maximum_Projector_Distance: `14 feet`,
+    Minimum_Viewable_Screen_Size: `60 inches`,
+    Maximum_Viewable_Screen_Size: `200 inches`,
+    gallery: [
+      ['icg/products/TK700STi/6479690cv11d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv12d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv13d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv14d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv15d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv16d.jpg', 'random picture'],
+    ],
+  },
+  {
+    product: `BenQ - TK700STi`, //الاسم ب اختصار
+    Brand: 'BenQ', //الماركة
+    feature: 'new product', //جديد ولا مستعمل
+    productIMG: 'icg/products/TK700STi/6479690_sd.jpg',
+    detail: `BenQ - TK700STi Smart 4K HDR Short Throw Gaming Projector, Low Input Lag, Enhanced Game Modes, 3000 Lumens - White`, //الاسم بالتفصيل
+    label: `link to BenQ - TK700STi product detail page`, //سيبك
+    alt: `BenQ - TK700STi Smart 4K HDR Short Throw Gaming Projector`, //سيبك
+    src: `icg/products/TK700STi`,
+    price: '$2,999', //السعر
+    link: '/product_detail/TK700STi',
+    Weight: '2kgs', //باقيت التفاصيل ضيف زي ما تحب
+    Source: 'Lamp',
+    Resolution: '4K (2160p)',
+    Color_Brightness: '3000 lumens',
+    White_Brightness: `3000 lumens`,
+    Contrast_Ratio: `10,000:1`,
+    Projector_Use: `Gaming, Home Theater`,
+    Portability: `Fixed`,
+    Model_Number: `TK700STi`,
+    Light_Source_Life_Economy_Mode: `10000 hours`,
+    Light_Source_Life_Normal_Mode: `4000 hours`,
+    Aspect_Ratio: `16:9`,
+    Minimum_Projector_Distance: `4.3 feet`,
+    Maximum_Projector_Distance: `14 feet`,
+    Minimum_Viewable_Screen_Size: `60 inches`,
+    Maximum_Viewable_Screen_Size: `200 inches`,
+    gallery: [
+      ['icg/products/TK700STi/6479690cv11d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv12d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv13d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv14d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv15d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv16d.jpg', 'random picture'],
+    ],
+  },
+  {
+    product: `BenQ - TK700STi`, //الاسم ب اختصار
+    Brand: 'BenQ', //الماركة
+    feature: 'new product', //جديد ولا مستعمل
+    productIMG: 'icg/products/TK700STi/6479690_sd.jpg',
+    detail: `BenQ - TK700STi Smart 4K HDR Short Throw Gaming Projector, Low Input Lag, Enhanced Game Modes, 3000 Lumens - White`, //الاسم بالتفصيل
+    label: `link to BenQ - TK700STi product detail page`, //سيبك
+    alt: `BenQ - TK700STi Smart 4K HDR Short Throw Gaming Projector`, //سيبك
+    src: `icg/products/TK700STi`,
+    price: '$2,999', //السعر
+    link: '/product_detail/TK700STi',
+    Weight: '2kgs', //باقيت التفاصيل ضيف زي ما تحب
+    Source: 'Lamp',
+    Resolution: '4K (2160p)',
+    Color_Brightness: '3000 lumens',
+    White_Brightness: `3000 lumens`,
+    Contrast_Ratio: `10,000:1`,
+    Projector_Use: `Gaming, Home Theater`,
+    Portability: `Fixed`,
+    Model_Number: `TK700STi`,
+    Light_Source_Life_Economy_Mode: `10000 hours`,
+    Light_Source_Life_Normal_Mode: `4000 hours`,
+    Aspect_Ratio: `16:9`,
+    Minimum_Projector_Distance: `4.3 feet`,
+    Maximum_Projector_Distance: `14 feet`,
+    Minimum_Viewable_Screen_Size: `60 inches`,
+    Maximum_Viewable_Screen_Size: `200 inches`,
+    gallery: [
+      ['icg/products/TK700STi/6479690cv11d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv12d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv13d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv14d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv15d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv16d.jpg', 'random picture'],
+    ],
+  },
+  {
+    product: `BenQ - TK700STi`, //الاسم ب اختصار
+    Brand: 'BenQ', //الماركة
+    feature: 'new product', //جديد ولا مستعمل
+    productIMG: 'icg/products/TK700STi/6479690_sd.jpg',
+    detail: `BenQ - TK700STi Smart 4K HDR Short Throw Gaming Projector, Low Input Lag, Enhanced Game Modes, 3000 Lumens - White`, //الاسم بالتفصيل
+    label: `link to BenQ - TK700STi product detail page`, //سيبك
+    alt: `BenQ - TK700STi Smart 4K HDR Short Throw Gaming Projector`, //سيبك
+    src: `icg/products/TK700STi`,
+    price: '$2,999', //السعر
+    link: '/product_detail/TK700STi',
+    Weight: '2kgs', //باقيت التفاصيل ضيف زي ما تحب
+    Source: 'Lamp',
+    Resolution: '4K (2160p)',
+    Color_Brightness: '3000 lumens',
+    White_Brightness: `3000 lumens`,
+    Contrast_Ratio: `10,000:1`,
+    Projector_Use: `Gaming, Home Theater`,
+    Portability: `Fixed`,
+    Model_Number: `TK700STi`,
+    Light_Source_Life_Economy_Mode: `10000 hours`,
+    Light_Source_Life_Normal_Mode: `4000 hours`,
+    Aspect_Ratio: `16:9`,
+    Minimum_Projector_Distance: `4.3 feet`,
+    Maximum_Projector_Distance: `14 feet`,
+    Minimum_Viewable_Screen_Size: `60 inches`,
+    Maximum_Viewable_Screen_Size: `200 inches`,
+    gallery: [
+      ['icg/products/TK700STi/6479690cv11d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv12d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv13d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv14d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv15d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv16d.jpg', 'random picture'],
+    ],
+  },
+  {
+    product: `BenQ - TK700STi`, //الاسم ب اختصار
+    Brand: 'BenQ', //الماركة
+    feature: 'new product', //جديد ولا مستعمل
+    productIMG: 'icg/products/TK700STi/6479690_sd.jpg',
+    detail: `BenQ - TK700STi Smart 4K HDR Short Throw Gaming Projector, Low Input Lag, Enhanced Game Modes, 3000 Lumens - White`, //الاسم بالتفصيل
+    label: `link to BenQ - TK700STi product detail page`, //سيبك
+    alt: `BenQ - TK700STi Smart 4K HDR Short Throw Gaming Projector`, //سيبك
+    src: `icg/products/TK700STi`,
+    price: '$2,999', //السعر
+    link: '/product_detail/TK700STi',
+    Weight: '2kgs', //باقيت التفاصيل ضيف زي ما تحب
+    Source: 'Lamp',
+    Resolution: '4K (2160p)',
+    Color_Brightness: '3000 lumens',
+    White_Brightness: `3000 lumens`,
+    Contrast_Ratio: `10,000:1`,
+    Projector_Use: `Gaming, Home Theater`,
+    Portability: `Fixed`,
+    Model_Number: `TK700STi`,
+    Light_Source_Life_Economy_Mode: `10000 hours`,
+    Light_Source_Life_Normal_Mode: `4000 hours`,
+    Aspect_Ratio: `16:9`,
+    Minimum_Projector_Distance: `4.3 feet`,
+    Maximum_Projector_Distance: `14 feet`,
+    Minimum_Viewable_Screen_Size: `60 inches`,
+    Maximum_Viewable_Screen_Size: `200 inches`,
+    gallery: [
+      ['icg/products/TK700STi/6479690cv11d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv12d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv13d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv14d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv15d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv16d.jpg', 'random picture'],
+    ],
+  },
+  {
+    product: `BenQ - TK700STi`, //الاسم ب اختصار
+    Brand: 'BenQ', //الماركة
+    feature: 'new product', //جديد ولا مستعمل
+    productIMG: 'icg/products/TK700STi/6479690_sd.jpg',
+    detail: `BenQ - TK700STi Smart 4K HDR Short Throw Gaming Projector, Low Input Lag, Enhanced Game Modes, 3000 Lumens - White`, //الاسم بالتفصيل
+    label: `link to BenQ - TK700STi product detail page`, //سيبك
+    alt: `BenQ - TK700STi Smart 4K HDR Short Throw Gaming Projector`, //سيبك
+    src: `icg/products/TK700STi`,
+    price: '$2,999', //السعر
+    link: '/product_detail/TK700STi',
+    Weight: '2kgs', //باقيت التفاصيل ضيف زي ما تحب
+    Source: 'Lamp',
+    Resolution: '4K (2160p)',
+    Color_Brightness: '3000 lumens',
+    White_Brightness: `3000 lumens`,
+    Contrast_Ratio: `10,000:1`,
+    Projector_Use: `Gaming, Home Theater`,
+    Portability: `Fixed`,
+    Model_Number: `TK700STi`,
+    Light_Source_Life_Economy_Mode: `10000 hours`,
+    Light_Source_Life_Normal_Mode: `4000 hours`,
+    Aspect_Ratio: `16:9`,
+    Minimum_Projector_Distance: `4.3 feet`,
+    Maximum_Projector_Distance: `14 feet`,
+    Minimum_Viewable_Screen_Size: `60 inches`,
+    Maximum_Viewable_Screen_Size: `200 inches`,
+    gallery: [
+      ['icg/products/TK700STi/6479690cv11d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv12d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv13d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv14d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv15d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv16d.jpg', 'random picture'],
+    ],
+  },
+  {
+    product: `BenQ - TK700STi`, //الاسم ب اختصار
+    Brand: 'BenQ', //الماركة
+    feature: 'new product', //جديد ولا مستعمل
+    productIMG: 'icg/products/TK700STi/6479690_sd.jpg',
+    detail: `BenQ - TK700STi Smart 4K HDR Short Throw Gaming Projector, Low Input Lag, Enhanced Game Modes, 3000 Lumens - White`, //الاسم بالتفصيل
+    label: `link to BenQ - TK700STi product detail page`, //سيبك
+    alt: `BenQ - TK700STi Smart 4K HDR Short Throw Gaming Projector`, //سيبك
+    src: `icg/products/TK700STi`,
+    price: '$2,999', //السعر
+    link: '/product_detail/TK700STi',
+    Weight: '2kgs', //باقيت التفاصيل ضيف زي ما تحب
+    Source: 'Lamp',
+    Resolution: '4K (2160p)',
+    Color_Brightness: '3000 lumens',
+    White_Brightness: `3000 lumens`,
+    Contrast_Ratio: `10,000:1`,
+    Projector_Use: `Gaming, Home Theater`,
+    Portability: `Fixed`,
+    Model_Number: `TK700STi`,
+    Light_Source_Life_Economy_Mode: `10000 hours`,
+    Light_Source_Life_Normal_Mode: `4000 hours`,
+    Aspect_Ratio: `16:9`,
+    Minimum_Projector_Distance: `4.3 feet`,
+    Maximum_Projector_Distance: `14 feet`,
+    Minimum_Viewable_Screen_Size: `60 inches`,
+    Maximum_Viewable_Screen_Size: `200 inches`,
+    gallery: [
+      ['icg/products/TK700STi/6479690cv11d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv12d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv13d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv14d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv15d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv16d.jpg', 'random picture'],
+    ],
+  },
+  {
+    product: `BenQ - TK700STi`, //الاسم ب اختصار
+    Brand: 'BenQ', //الماركة
+    feature: 'new product', //جديد ولا مستعمل
+    productIMG: 'icg/products/TK700STi/6479690_sd.jpg',
+    detail: `BenQ - TK700STi Smart 4K HDR Short Throw Gaming Projector, Low Input Lag, Enhanced Game Modes, 3000 Lumens - White`, //الاسم بالتفصيل
+    label: `link to BenQ - TK700STi product detail page`, //سيبك
+    alt: `BenQ - TK700STi Smart 4K HDR Short Throw Gaming Projector`, //سيبك
+    src: `icg/products/TK700STi`,
+    price: '$2,999', //السعر
+    link: '/product_detail/TK700STi',
+    Weight: '2kgs', //باقيت التفاصيل ضيف زي ما تحب
+    Source: 'Lamp',
+    Resolution: '4K (2160p)',
+    Color_Brightness: '3000 lumens',
+    White_Brightness: `3000 lumens`,
+    Contrast_Ratio: `10,000:1`,
+    Projector_Use: `Gaming, Home Theater`,
+    Portability: `Fixed`,
+    Model_Number: `TK700STi`,
+    Light_Source_Life_Economy_Mode: `10000 hours`,
+    Light_Source_Life_Normal_Mode: `4000 hours`,
+    Aspect_Ratio: `16:9`,
+    Minimum_Projector_Distance: `4.3 feet`,
+    Maximum_Projector_Distance: `14 feet`,
+    Minimum_Viewable_Screen_Size: `60 inches`,
+    Maximum_Viewable_Screen_Size: `200 inches`,
+    gallery: [
+      ['icg/products/TK700STi/6479690cv11d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv12d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv13d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv14d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv15d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv16d.jpg', 'random picture'],
+    ],
+  },
+  {
+    product: `BenQ - TK700STi`, //الاسم ب اختصار
+    Brand: 'BenQ', //الماركة
+    feature: 'new product', //جديد ولا مستعمل
+    productIMG: 'icg/products/TK700STi/6479690_sd.jpg',
+    detail: `BenQ - TK700STi Smart 4K HDR Short Throw Gaming Projector, Low Input Lag, Enhanced Game Modes, 3000 Lumens - White`, //الاسم بالتفصيل
+    label: `link to BenQ - TK700STi product detail page`, //سيبك
+    alt: `BenQ - TK700STi Smart 4K HDR Short Throw Gaming Projector`, //سيبك
+    src: `icg/products/TK700STi`,
+    price: '$2,999', //السعر
+    link: '/product_detail/TK700STi',
+    Weight: '2kgs', //باقيت التفاصيل ضيف زي ما تحب
+    Source: 'Lamp',
+    Resolution: '4K (2160p)',
+    Color_Brightness: '3000 lumens',
+    White_Brightness: `3000 lumens`,
+    Contrast_Ratio: `10,000:1`,
+    Projector_Use: `Gaming, Home Theater`,
+    Portability: `Fixed`,
+    Model_Number: `TK700STi`,
+    Light_Source_Life_Economy_Mode: `10000 hours`,
+    Light_Source_Life_Normal_Mode: `4000 hours`,
+    Aspect_Ratio: `16:9`,
+    Minimum_Projector_Distance: `4.3 feet`,
+    Maximum_Projector_Distance: `14 feet`,
+    Minimum_Viewable_Screen_Size: `60 inches`,
+    Maximum_Viewable_Screen_Size: `200 inches`,
+    gallery: [
+      ['icg/products/TK700STi/6479690cv11d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv12d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv13d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv14d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv15d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv16d.jpg', 'random picture'],
+    ],
+  },
+  {
+    product: `BenQ - TK700STi`, //الاسم ب اختصار
+    Brand: 'BenQ', //الماركة
+    feature: 'new product', //جديد ولا مستعمل
+    productIMG: 'icg/products/TK700STi/6479690_sd.jpg',
+    detail: `BenQ - TK700STi Smart 4K HDR Short Throw Gaming Projector, Low Input Lag, Enhanced Game Modes, 3000 Lumens - White`, //الاسم بالتفصيل
+    label: `link to BenQ - TK700STi product detail page`, //سيبك
+    alt: `BenQ - TK700STi Smart 4K HDR Short Throw Gaming Projector`, //سيبك
+    src: `icg/products/TK700STi`,
+    price: '$2,999', //السعر
+    link: '/product_detail/TK700STi',
+    Weight: '2kgs', //باقيت التفاصيل ضيف زي ما تحب
+    Source: 'Lamp',
+    Resolution: '4K (2160p)',
+    Color_Brightness: '3000 lumens',
+    White_Brightness: `3000 lumens`,
+    Contrast_Ratio: `10,000:1`,
+    Projector_Use: `Gaming, Home Theater`,
+    Portability: `Fixed`,
+    Model_Number: `TK700STi`,
+    Light_Source_Life_Economy_Mode: `10000 hours`,
+    Light_Source_Life_Normal_Mode: `4000 hours`,
+    Aspect_Ratio: `16:9`,
+    Minimum_Projector_Distance: `4.3 feet`,
+    Maximum_Projector_Distance: `14 feet`,
+    Minimum_Viewable_Screen_Size: `60 inches`,
+    Maximum_Viewable_Screen_Size: `200 inches`,
+    gallery: [
+      ['icg/products/TK700STi/6479690cv11d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv12d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv13d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv14d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv15d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv16d.jpg', 'random picture'],
+    ],
+  },
+  {
+    product: `BenQ - TK700STi`, //الاسم ب اختصار
+    Brand: 'BenQ', //الماركة
+    feature: 'new product', //جديد ولا مستعمل
+    productIMG: 'icg/products/TK700STi/6479690_sd.jpg',
+    detail: `BenQ - TK700STi Smart 4K HDR Short Throw Gaming Projector, Low Input Lag, Enhanced Game Modes, 3000 Lumens - White`, //الاسم بالتفصيل
+    label: `link to BenQ - TK700STi product detail page`, //سيبك
+    alt: `BenQ - TK700STi Smart 4K HDR Short Throw Gaming Projector`, //سيبك
+    src: `icg/products/TK700STi`,
+    price: '$2,999', //السعر
+    link: '/product_detail/TK700STi',
+    Weight: '2kgs', //باقيت التفاصيل ضيف زي ما تحب
+    Source: 'Lamp',
+    Resolution: '4K (2160p)',
+    Color_Brightness: '3000 lumens',
+    White_Brightness: `3000 lumens`,
+    Contrast_Ratio: `10,000:1`,
+    Projector_Use: `Gaming, Home Theater`,
+    Portability: `Fixed`,
+    Model_Number: `TK700STi`,
+    Light_Source_Life_Economy_Mode: `10000 hours`,
+    Light_Source_Life_Normal_Mode: `4000 hours`,
+    Aspect_Ratio: `16:9`,
+    Minimum_Projector_Distance: `4.3 feet`,
+    Maximum_Projector_Distance: `14 feet`,
+    Minimum_Viewable_Screen_Size: `60 inches`,
+    Maximum_Viewable_Screen_Size: `200 inches`,
+    gallery: [
+      ['icg/products/TK700STi/6479690cv11d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv12d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv13d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv14d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv15d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv16d.jpg', 'random picture'],
+    ],
+  },
+  {
+    product: `BenQ - TK700STi`, //الاسم ب اختصار
+    Brand: 'BenQ', //الماركة
+    feature: 'new product', //جديد ولا مستعمل
+    productIMG: 'icg/products/TK700STi/6479690_sd.jpg',
+    detail: `BenQ - TK700STi Smart 4K HDR Short Throw Gaming Projector, Low Input Lag, Enhanced Game Modes, 3000 Lumens - White`, //الاسم بالتفصيل
+    label: `link to BenQ - TK700STi product detail page`, //سيبك
+    alt: `BenQ - TK700STi Smart 4K HDR Short Throw Gaming Projector`, //سيبك
+    src: `icg/products/TK700STi`,
+    price: '$2,999', //السعر
+    link: '/product_detail/TK700STi',
+    Weight: '2kgs', //باقيت التفاصيل ضيف زي ما تحب
+    Source: 'Lamp',
+    Resolution: '4K (2160p)',
+    Color_Brightness: '3000 lumens',
+    White_Brightness: `3000 lumens`,
+    Contrast_Ratio: `10,000:1`,
+    Projector_Use: `Gaming, Home Theater`,
+    Portability: `Fixed`,
+    Model_Number: `TK700STi`,
+    Light_Source_Life_Economy_Mode: `10000 hours`,
+    Light_Source_Life_Normal_Mode: `4000 hours`,
+    Aspect_Ratio: `16:9`,
+    Minimum_Projector_Distance: `4.3 feet`,
+    Maximum_Projector_Distance: `14 feet`,
+    Minimum_Viewable_Screen_Size: `60 inches`,
+    Maximum_Viewable_Screen_Size: `200 inches`,
+    gallery: [
+      ['icg/products/TK700STi/6479690cv11d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv12d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv13d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv14d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv15d.jpg', 'random picture'],
+      ['icg/products/TK700STi/6479690cv16d.jpg', 'random picture'],
+    ],
+  },
 ]

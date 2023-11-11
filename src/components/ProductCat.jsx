@@ -16,7 +16,7 @@ function ProductCat({
   let seso = place.split('/')
   const width = useWidth()
   return (
-    <section className='ProductCat'>
+    <section className='ProductCat MaxWrapper'>
       {(turn || width < 768) && (
         <picture>
           <source

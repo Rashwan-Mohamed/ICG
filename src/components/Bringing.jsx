@@ -4,36 +4,18 @@ function Bringing() {
   return (
     <section className='bringing'>
       <article>
-        <h1>
-          Bringing you the <span className='best'>best</span> audio gear
-        </h1>
-        <p>
-          Located at the heart of New York City, Audiophile is the premier store
-          for high end headphones, earphones, speakers, and audio accessories.
-          We have a large showroom and luxury demonstration rooms available for
-          you to browse and experience a wide range of our products. Stop by our
-          store to meet some of the fantastic people who make Audiophile the
-          best place to buy your portable audio equipment.
-        </p>
+        <h1> ICG Home Cinema Projectors</h1>
+        <p>Enjoy Movie Premieres at Home</p>
       </article>
       <picture>
         {' '}
         <source
-          srcSet='/assets/shared/desktop/image-best-gear.jpg'
+          srcSet='src\assets\icg\cinema-kv-new2-1.jpg'
           media='(min-width:1024px)'
         />
-        <source
-          srcSet='/assets/shared/tablet/image-best-gear.jpg'
-          media='(min-width:521px)'
-        />
-        <source
-          srcSet='/assets/shared/mobile/image-best-gear.jpg'
-          media='(max-width:520px)'
-        />
-        <img
-          src='/assets/shared/desktop/image-best-gear.jpg'
-          alt='image-best-gear'
-        />
+        <source srcSet='src/assets/icg/vision.webp' media='(min-width:521px)' />
+        <source srcSet='src/assets/icg/vision.webp' media='(max-width:520px)' />
+        <img src='src/assets/icg/vision.webp' alt='image-best-gear' />
       </picture>
     </section>
   )

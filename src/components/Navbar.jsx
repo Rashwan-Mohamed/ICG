@@ -82,9 +82,9 @@ function Navbar() {
             </div>
           </>
         )}
-        <picture onClick={() => navigate('/')}>
+        {/* <picture onClick={() => navigate('/')}>
           <source
-            srcSet='\assets\shared\desktop\logo.svg '
+            srcSet='src\assets\icg\icg.png'
             sizes='(min-width:1024px)'
           />
           <source
@@ -95,30 +95,27 @@ function Navbar() {
             srcSet='\assets\shared\mobile\logo.svg'
             media='(max-width:480px)'
           />
-          <img
-            srcSet='\assets\shared\desktop\logo.svg'
-            alt='audiophile logo'
-          />
-        </picture>
-
+          <img srcSet='\assets\shared\desktop\logo.svg' alt='audiophile logo' />
+        </picture> */}
+        <h2 className='LEGO' >ICG</h2>
         <ul className='cats'>
           <li className={isHome === '/' ? 'here' : 'undefined'}>
             <Link to={'/'}>Home</Link>
           </li>
           <li className={isHome === '/headphones' ? 'here' : 'undefined'}>
-            <Link to={'/headphones'}>Headphones</Link>
+            <Link to={'/headphones'}>Products</Link>
           </li>
           <li className={isHome === '/speakers' ? 'here' : 'undefined'}>
-            <Link to={'/speakers'}>Speakers</Link>
+            <Link to={'/speakers'}>About Us</Link>
           </li>
-          <li className={isHome === '/earphones' ? 'here' : 'undefined'}>
+          {/* <li className={isHome === '/earphones' ? 'here' : 'undefined'}>
             <Link to={'/earphones'}>Earphones</Link>
-          </li>
+          </li> */}
         </ul>
-        <div ref={bad} onClick={() => setCartShow(!cartShow)} className='press'>
+        {/* <div ref={bad} onClick={() => setCartShow(!cartShow)} className='press'>
           {cart.length > 0 && <span>{cart.length}</span>}
           <img src='\assets\shared\desktop\icon-cart.svg' alt='icon-cart' />
-        </div>
+        </div> */}
       </div>
       {cartShow && <Cart bad={bad} setCartShow={setCartShow}></Cart>}
     </nav>
