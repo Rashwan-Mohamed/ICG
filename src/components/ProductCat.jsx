@@ -35,7 +35,7 @@ function ProductCat({
           <img src={`/assets/${seso[0]}/desktop/${seso[2]}`} alt={alt} />
         </picture>
       )} */}
-      <img src={`/src/assets/${place}`} alt='' />
+      <img src={`/assets/${place}`} alt='' />
       <article className='details'>
         <p className='desc'>{feature}</p>
         <h1>{product}</h1>

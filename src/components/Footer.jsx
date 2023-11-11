@@ -10,7 +10,7 @@ function Footer({ className }) {
 
         <picture className='footerHero'>
           <source
-            srcSet='\src\assets\icg\_0ee01b00-7a86-4f82-a0fe-e0bb9d3cfda3.jpg'
+            srcSet='\assets\icg\_0ee01b00-7a86-4f82-a0fe-e0bb9d3cfda3.jpg'
             sizes='(min-width:1024px)'
           />
           <source

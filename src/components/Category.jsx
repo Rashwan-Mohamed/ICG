@@ -13,7 +13,7 @@ function Category({ setOpen }) {
       >
         <picture>
           <img
-            src='src\assets\icg\w2710-gallery-1-2.webp'
+            src='/assets\icg\w2710-gallery-1-2.webp'
             alt='mark-one-headphones'
           />
         </picture>{' '}

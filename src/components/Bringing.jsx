@@ -10,18 +10,18 @@ function Bringing() {
       <picture>
         {' '}
         <source
-          srcSet='src\assets\icg\vision.webp'
+          srcSet='\assets\icg\vision.webp'
           media='(min-width:1024px)'
         />
         <source
-          srcSet='src/assets/icg/cinema-kv-new2-1.jpg'
+          srcSet='/assets/icg/cinema-kv-new2-1.jpg'
           media='(min-width:521px)'
         />
         <source
-          srcSet='src/assets/icg/cinema-kv-new2-1.jpg'
+          srcSet='/assets/icg/cinema-kv-new2-1.jpg'
           media='(max-width:520px)'
         />
-        <img src='src/assets/icg/vision.webp' alt='image-best-gear' />
+        <img src='/assets/icg/vision.webp' alt='image-best-gear' />
       </picture>
     </section>
   )
