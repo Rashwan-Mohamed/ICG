@@ -23,10 +23,7 @@ function Home() {
               HDR-PRO technologies in your home cinema for the most genuine,
               eye-popping experiences.
             </p>
-            <button
-              onClick={() => naviage('/product_detail/xx99-mark-ii')}
-              className='seePro'
-            >
+            <button onClick={() => naviage('/headphones')} className='seePro'>
               SEE PRODUCTS
             </button>
           </article>
@@ -61,10 +58,7 @@ function Home() {
               workplace needs, including wireless mobility and a low cost of
               ownership.
             </p>
-            <SeeProduct
-              custome={'custom'}
-              where={'/product_detail/zx9'}
-            ></SeeProduct>
+            <SeeProduct custome={'custom'} where={'/headphones'}></SeeProduct>
           </article>
         </section>
         <section className='z7x MaxWrapper'>
@@ -74,7 +68,7 @@ function Home() {
             projectors, displays are designed to be reliable and offer a low
             total cost of ownership that makes them ideal education investments.
           </p>
-          <SeeProduct where={'/product_detail/zx9'}></SeeProduct>
+          <SeeProduct where={'/headphones'}></SeeProduct>
         </section>
         <Bringing></Bringing>
         <section className='yx1 '>
@@ -85,7 +79,7 @@ function Home() {
               signage, these high-lumen projectors provide uncompromising image
               quality, brilliant video and professional-grade reliability.
             </p>
-            <SeeProduct where={'/product_detail/yx1'}></SeeProduct>
+            <SeeProduct where={'/headphones'}></SeeProduct>
             <picture>
               <source
                 srcSet='/assets/icg/large-venue-projectors_bg_largevenueprinters.jpg'
