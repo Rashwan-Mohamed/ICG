@@ -6,7 +6,7 @@ import Cart from './Cart'
 import { useWidth } from '../useWidt'
 import Category from './Category'
 function Navbar() {
-  const { cart } = useGlobalContext()
+  const { cart, lang, changeLanguage } = useGlobalContext()
   const [isHome, setIsHome] = useState(useLocation())
   const [scrolled, setScrolled] = useState(false)
   const [cartShow, setCartShow] = useState(false)
@@ -83,39 +83,42 @@ function Navbar() {
           </>
         )}
         {/* <picture onClick={() => navigate('/')}>
-          <source
-            srcSet='src\assets\icg\icg.png'
-            sizes='(min-width:1024px)'
-          />
-          <source
-            srcSet='\assets\shared\tablet\logo.svg '
-            sizes='(min-width:481px)'
-          />
-          <source
-            srcSet='\assets\shared\mobile\logo.svg'
-            media='(max-width:480px)'
-          />
-          <img srcSet='\assets\shared\desktop\logo.svg' alt='audiophile logo' />
-        </picture> */}
-        <h2 className='LEGO' >ICG</h2>
+      <source
+        srcSet='src\assets\icg\icg.png'
+        sizes='(min-width:1024px)'
+      />
+      <source
+        srcSet='\assets\shared\tablet\logo.svg '
+        sizes='(min-width:481px)'
+      />
+      <source
+        srcSet='\assets\shared\mobile\logo.svg'
+        media='(max-width:480px)'
+      />
+      <img srcSet='\assets\shared\desktop\logo.svg' alt='audiophile logo' />
+    </picture> */}
+        <h2 className='LEGO'>ICG</h2>
         <ul className='cats'>
           <li className={isHome === '/' ? 'here' : 'undefined'}>
-            <Link to={'/'}>Home</Link>
+            <Link to={'/'}>{lang ? 'الصفحة الرئيسية' : 'Home'}</Link>
           </li>
           <li className={isHome === '/headphones' ? 'here' : 'undefined'}>
-            <Link to={'/headphones'}>Products</Link>
+            <Link to={'/headphones'}>{lang ? 'المنتجات' : 'Products'}</Link>
           </li>
           <li className={isHome === '/speakers' ? 'here' : 'undefined'}>
-            <Link to={'/speakers'}>About Us</Link>
+            <Link to={'/speakers'}>{lang ? 'من نحن' : 'About Us'}</Link>
           </li>
           {/* <li className={isHome === '/earphones' ? 'here' : 'undefined'}>
-            <Link to={'/earphones'}>Earphones</Link>
-          </li> */}
+        <Link to={'/earphones'}>{lang ? 'سماعات الأذن' : 'Earphones'}</Link>
+      </li> */}
         </ul>
+        <h3 className='Legs' onClick={() => changeLanguage(!lang)}>
+          {lang ? 'en' : 'ar'}
+        </h3>
         {/* <div ref={bad} onClick={() => setCartShow(!cartShow)} className='press'>
-          {cart.length > 0 && <span>{cart.length}</span>}
-          <img src='\assets\shared\desktop\icon-cart.svg' alt='icon-cart' />
-        </div> */}
+      {cart.length > 0 && <span>{cart.length}</span>}
+      <img src='\assets\shared\desktop\icon-cart.svg' alt='icon-cart' />
+    </div> */}
       </div>
       {cartShow && <Cart bad={bad} setCartShow={setCartShow}></Cart>}
     </nav>

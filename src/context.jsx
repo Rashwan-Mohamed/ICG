@@ -9,7 +9,10 @@ const initialState = {
 
 const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState)
-
+  const [lang, setLangu] = useState(true)
+  const changeLanguage = (language) => {
+    setLangu(language)
+  }
   const add = (id, num) => {
     dispatch({ type: 'add', payload: { id, num } })
   }
@@ -22,9 +25,18 @@ const AppProvider = ({ children }) => {
   const removeAll = (id) => {
     dispatch({ type: 'removeAll', payload: {} })
   }
+
   return (
     <AppContext.Provider
-      value={{ ...state, add, increase, decrease, removeAll }}
+      value={{
+        ...state,
+        add,
+        increase,
+        decrease,
+        removeAll,
+        lang,
+        changeLanguage,
+      }}
     >
       {children}
     </AppContext.Provider>

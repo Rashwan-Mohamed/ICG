@@ -1,10 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-Link
-function SeeProduct({ where, sases,custom }) {
+import { useGlobalContext } from '../context'
+
+function SeeProduct({ where, sases, custom }) {
+  const { lang } = useGlobalContext()
+
   return (
     <Link className={sases ? 'seePro ' : 'sawPro'} to={where}>
-      SEE PRODUCTS
+      {lang ? 'رؤية المنتجات' : 'SEE PRODUCTS'}
     </Link>
   )
 }
