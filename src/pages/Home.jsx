@@ -13,11 +13,24 @@ function Home() {
   const naviage = useNavigate()
   const { lang } = useGlobalContext()
 
+  // Assuming you have a variable `isArabic` that indicates the language
+
+  // Get the body element
+
+  // Set the font family based on the language
+  // ;;(body.style.fontFamily = lang ? 'Rubik, sans-serif' : 'MANROPE'), 'arial'
+
   return (
     <>
       <header className='homeHeader'>
         <div className='wrapper'>
-          <article className='heleft'>
+          <article
+            style={{
+              textAlign: lang ? 'right' : 'left',
+              alignItems: lang ? 'flex-end' : 'flex-start',
+            }}
+            className='heleft'
+          >
             <p className='newProduct'>
               {lang ? 'Home Cinema Projector' : 'Home Cinema Projector'}
             </p>
@@ -26,9 +39,9 @@ function Home() {
                 ? 'مستقبل العرض البياني في الشرق الاوسط'
                 : 'The future of Data show'}
             </h1>
-            <p>
+            <p dir='rtl'>
               {lang
-                ? 'استمتع بتجارب بصرية سينمائية مبتكرة وترفيه غامر مع مشغلات ICG المنزلية الجديدة. اسمح بالألوان الأصلية والتفاصيل الساطعة والداكنة المدعومة بتقنيات CinematicColor و HDR-PRO في سينما منزلية لتجارب حقيقية ومذهلة.'
+                ? 'تجربة رؤية مبتكرة للصور السينمائية وترفيه مغمور مع مشغلات السينما المنزلية الجديدة من ICG. استمتع بتجارب حقيقية مع ألوان أصيلة وتفاصيل ساطعة ومظلمة مدعومة بتقنيات CinematicColor و HDR-PRO في سينما منزلك، لتحظى بتجارب حقيقية ومذهلة للعيون.'
                 : 'Experience innovative cinematic visuals and immersive entertainment with new ICG home projectors. Bask in authentic colors and bright and dark details supported by CinematicColor and HDR-PRO technologies in your home cinema for the most genuine, eye-popping experiences.'}
             </p>
             <button onClick={() => naviage('/headphones')} className='seePro'>
@@ -60,17 +73,40 @@ function Home() {
           </picture>
           <article>
             <h1>{lang ? 'مشغلات الأعمال' : 'Business Projectors'}</h1>
-            <p>
+            <p
+              dir='rtl'
+              style={{
+                fontSize: lang ? '18px' : '15px',
+              }}
+            >
               {lang
                 ? 'جلب الوضوح والتعاون الأكبر إلى عملك مع مشغلات ICG ، مصممة لتناسب ميزانيتك مع دعم احتياجات مكان العمل الحديثة ، بما في ذلك التنقل اللاسلكي وتكلفة امتلاك منخفضة.'
                 : 'Bring greater clarity and collaboration to your business with ICG projectors, designed to fit your budget while supporting today’s workplace needs, including wireless mobility and a low cost of ownership.'}
             </p>
-            <SeeProduct custome={'custom'} where={'/headphones'}></SeeProduct>
+            <SeeProduct
+              style={{
+                fontSize: lang ? '18px' : '15px',
+              }}
+              custome={'custom'}
+              where={'/headphones'}
+            ></SeeProduct>
           </article>
         </section>
-        <section className='z7x MaxWrapper'>
+        <section
+          style={{
+            alignItems: lang ? 'flex-end' : 'flex-start',
+            justifyContent: lang ? 'space-between' : 'center',
+            textAlign: lang ? 'right' : 'left',
+          }}
+          className='z7x MaxWrapper'
+        >
           <h2>{lang ? 'مشغلات التعليم' : 'Education Projectors'}</h2>
-          <p>
+          <p
+            dir='rtl'
+            style={{
+              fontSize: lang ? '18px' : 'initial',
+            }}
+          >
             {lang
               ? 'من الفصول الدراسية الصغيرة إلى القاعات الكبيرة ، تم تصميم مشغلات ICG متعددة الوسائط والشاشات لتكون موثوقة وتقدم تكلفة ملكية إجمالية منخفضة تجعلها استثمارات تعليمية مثالية.'
               : 'From small classrooms to large auditoriums, ICG line of multimedia projectors, displays are designed to be reliable and offer a low total cost of ownership that makes them ideal education investments.'}
@@ -83,7 +119,7 @@ function Home() {
             <h2>
               {lang ? 'مشغلات الفعاليات الكبيرة' : 'Large Venue Projectors'}
             </h2>
-            <p>
+            <p dir='rtl' >
               {lang
                 ? 'لقاعات المحاضرات ، القاعات الكبيرة ، المحرمات ، الفعاليات ، والعلامات الرقمية ، تقدم هذه المشغلات العالية اللومن صورًا ذات جودة لا تقبل المساومة ، وفيديو رائع وموثوقية عالية المستوى.'
                 : 'For lecture halls, auditoriums, sanctuaries, events, and digital signage, these high-lumen projectors provide uncompromising image quality, brilliant video and professional-grade reliability.'}

@@ -100,13 +100,22 @@ function Navbar() {
         <h2 className='LEGO'>ICG</h2>
         <ul className='cats'>
           <li className={isHome === '/' ? 'here' : 'undefined'}>
-            <Link to={'/'}>{lang ? 'الصفحة الرئيسية' : 'Home'}</Link>
+            <Link style={{ fontSize: lang ? '16px' : '13px' }} to={'/'}>
+              {lang ? 'الصفحة الرئيسية' : 'Home'}
+            </Link>
           </li>
           <li className={isHome === '/headphones' ? 'here' : 'undefined'}>
-            <Link to={'/headphones'}>{lang ? 'المنتجات' : 'Products'}</Link>
+            <Link
+              style={{ fontSize: lang ? '16px' : '13px' }}
+              to={'/headphones'}
+            >
+              {lang ? 'المنتجات' : 'Products'}
+            </Link>
           </li>
           <li className={isHome === '/speakers' ? 'here' : 'undefined'}>
-            <Link to={'/speakers'}>{lang ? 'من نحن' : 'About Us'}</Link>
+            <Link style={{ fontSize: lang ? '16px' : '13px' }} to={'/speakers'}>
+              {lang ? 'من نحن' : 'About Us'}
+            </Link>
           </li>
           {/* <li className={isHome === '/earphones' ? 'here' : 'undefined'}>
         <Link to={'/earphones'}>{lang ? 'سماعات الأذن' : 'Earphones'}</Link>

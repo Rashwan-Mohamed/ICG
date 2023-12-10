@@ -8,7 +8,7 @@ function Bringing() {
     <section className='bringing'>
       <article>
         <h1>
-          {lang ? 'مشغلات السينما المنزلية ICG' : 'ICG Home Cinema Projectors'}
+          {lang ? 'ICG مشغلات السينما المنزلية ' : 'ICG Home Cinema Projectors'}
         </h1>
         <p>
           {lang

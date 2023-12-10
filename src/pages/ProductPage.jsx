@@ -9,6 +9,8 @@ import Footer from '../components/Footer'
 import Toggle from '../components/Toggle'
 import ProductCat from '../components/ProductCat'
 import { useGlobalContext } from '../context'
+import { useWidth } from '../useWidt'
+
 function ProductPage() {
   const [product, setProduct] = useState(0)
   const [num, setNum] = useState(1)
@@ -17,6 +19,8 @@ function ProductPage() {
   const { amount, add, cart, lang } = useGlobalContext()
   const [sel, setSelected] = useState(0)
   const [similar, setSimilar] = useState([])
+  const width = useWidth()
+  console.log(width, 'width Rash')
   useEffect(() => {
     setNum(1)
   }, [location])
@@ -30,17 +34,16 @@ function ProductPage() {
     let Simadd = []
     data.forEach((pros) => {
       const { price: comp, id: ip } = pros
-      console.log(ip !== theOne.id, ip === theOne.id)
       if (ip === theOne.id) return
       if (
         Math.abs(
           Number(comp.replace(/,/g, '')) -
             Number(theOne.price.replace(/,/g, ''))
-        ) >= 1000 ||
+        ) >= 50 ||
         Math.abs(
           Number(comp.replace(/,/g, '')) -
             Number(theOne.price.replace(/,/g, ''))
-        ) <= 3000
+        ) <= 200
       ) {
         if (Simadd.length < 3) {
           Simadd.push(pros)
@@ -90,89 +93,223 @@ function ProductPage() {
   return (
     <>
       <main className='productPage'>
-        <button onClick={() => navigate(-1)} className='goBack'>
-          العودة
+        <button
+          style={{
+            fontSize: lang ? '18px' : '',
+          }}
+          onClick={() => navigate(-1)}
+          className='goBack'
+        >
+          {lang ? `العودة` : `GoBack`}{' '}
         </button>
 
         <section className='ProductCat '>
-          <article className='gallary'>
-            <div className='viewed'>
-              {gallery.map((galArr, index) => {
-                const [src] = galArr
-                return (
-                  <img
-                    key={index}
-                    className={sel === index ? `yes notYou` : `notYou`}
-                    src={`../assets/${src}`}
-                    alt=''
-                  />
-                )
-              })}
-            </div>
-            <div className='other'>
-              {gallery.map((galArr, index) => {
-                const [src] = galArr
-                return (
-                  <img
-                    onMouseEnter={() => {
-                      setSelected(index)
-                    }}
-                    onTouchStart={() => {
-                      setSelected(index)
-                    }}
-                    key={index}
-                    src={`../assets/${src}`}
-                    alt=''
-                  />
-                )
-              })}
-            </div>
-          </article>
-          <article className='details'>
-            <h1>{detail}</h1>
-            <span className='spanPrice'>{price}</span>
-            <h3>{lang ? 'تفاصيل المنتج:' : 'Product Details:'}</h3>
-            <ul>
-              <li>
-                {lang
-                  ? `اسم العلامة التجارية: ${Brand}`
-                  : `Brand name: ${Brand}`}
-              </li>
-              <li>
-                {lang ? `النموذج: ${Model_Number}` : `Model: ${Model_Number}`}
-              </li>
-              <li>{lang ? `المصدر: ${Source}` : `Source: ${Source}`}</li>
-              <li>
-                {lang ? `الدقة: ${Resolution}` : `Resolution: ${Resolution}`}
-              </li>
-              <li>{lang ? `الوزن: ${Weight}` : `Weight: ${Weight}`}</li>
-              <li>
-                {lang
-                  ? `سطوع الألوان: ${Color_Brightness}`
-                  : `Color Brightness: ${Color_Brightness}`}
-              </li>
-              <li>
-                {lang
-                  ? `نسبة التباين: ${Contrast_Ratio}`
-                  : `Contrast Ratio: ${Contrast_Ratio}`}
-              </li>
-              <li>
-                {lang
-                  ? `عمر مصدر الضوء في وضع الاقتصاد: ${Light_Source_Life_Economy_Mode}`
-                  : `Light Source Life Economy Mode: ${Light_Source_Life_Economy_Mode}`}
-              </li>
-              <li>
-                {lang
-                  ? `عمر مصدر الضوء في وضع العادي: ${Light_Source_Life_Normal_Mode}`
-                  : `Light Source Life Normal Mode: ${Light_Source_Life_Normal_Mode}`}
-              </li>
-              <li>
-                {lang
-                  ? `نسبة العرض: ${Aspect_Ratio}`
-                  : `Aspect Ratio: ${Aspect_Ratio}`}
-              </li>
-            </ul>
-          </article>
+          {width > 520 ? (
+            <>
+              {' '}
+              <article className='gallary'>
+                <div className='viewed'>
+                  {gallery.map((galArr, index) => {
+                    const [src] = galArr
+                    return (
+                      <img
+                        key={index}
+                        className={sel === index ? `yes notYou` : `notYou`}
+                        src={`../assets/${src}`}
+                        alt=''
+                      />
+                    )
+                  })}
+                </div>
+                <div className='other'>
+                  {gallery.map((galArr, index) => {
+                    const [src] = galArr
+                    return (
+                      <img
+                        onMouseEnter={() => {
+                          setSelected(index)
+                        }}
+                        onTouchStart={() => {
+                          setSelected(index)
+                        }}
+                        key={index}
+                        src={`../assets/${src}`}
+                        alt=''
+                      />
+                    )
+                  })}
+                </div>
+              </article>
+              <article className='details'>
+                <h1>{detail}</h1>
+                <span className='spanPrice'>{price}</span>
+                <h3
+                  dir={lang ? 'rtl' : 'lrt'}
+                  style={{
+                    textAlign: lang ? 'right' : 'left',
+                    alignSelf: lang ? 'flex-end' : 'flex-start',
+                  }}
+                >
+                  {lang ? 'تفاصيل المنتج:' : 'Product Details:'}
+                </h3>
+                <ul
+                  style={{
+                    textAlign: lang ? 'right' : 'left',
+                    alignSelf: lang ? 'flex-end' : 'flex-start',
+                  }}
+                >
+                  <li dir='rtl'>
+                    {lang
+                      ? `اسم العلامة التجارية: ${Brand}`
+                      : `Brand name: ${Brand}`}
+                  </li>
+                  <li dir='rtl'>
+                    {lang
+                      ? `النموذج: ${Model_Number}`
+                      : `Model: ${Model_Number}`}
+                  </li>
+                  <li dir='rtl'>
+                    {lang ? `المصدر: ${Source}` : `Source: ${Source}`}
+                  </li>
+                  <li dir='rtl'>
+                    {lang
+                      ? `الدقة: ${Resolution}`
+                      : `Resolution: ${Resolution}`}
+                  </li>
+                  <li dir='rtl'>
+                    {lang ? `الوزن: ${Weight}` : `Weight: ${Weight}`}
+                  </li>
+                  <li dir='rtl'>
+                    {lang
+                      ? `سطوع الألوان: ${Color_Brightness}`
+                      : `Color Brightness: ${Color_Brightness}`}
+                  </li>
+                  <li dir='rtl'>
+                    {lang
+                      ? `نسبة التباين: ${Contrast_Ratio}`
+                      : `Contrast Ratio: ${Contrast_Ratio}`}
+                  </li>
+                  <li dir='rtl'>
+                    {lang
+                      ? `عمر مصدر الضوء في وضع الاقتصاد: ${Light_Source_Life_Economy_Mode}`
+                      : `Light Source Life Economy Mode: ${Light_Source_Life_Economy_Mode}`}
+                  </li>
+                  <li dir='rtl'>
+                    {lang
+                      ? `عمر مصدر الضوء في وضع العادي: ${Light_Source_Life_Normal_Mode}`
+                      : `Light Source Life Normal Mode: ${Light_Source_Life_Normal_Mode}`}
+                  </li>
+                  <li dir='rtl'>
+                    {lang
+                      ? `نسبة العرض: ${Aspect_Ratio}`
+                      : `Aspect Ratio: ${Aspect_Ratio}`}
+                  </li>
+                </ul>
+              </article>
+            </>
+          ) : (
+            <>
+              <article className='phoneStyle'>
+                <h1>{detail}</h1>
+                <article className='gallary'>
+                  <div className='viewed'>
+                    {gallery.map((galArr, index) => {
+                      const [src] = galArr
+                      return (
+                        <img
+                          key={index}
+                          className={sel === index ? `yes notYou` : `notYou`}
+                          src={`../assets/${src}`}
+                          alt=''
+                        />
+                      )
+                    })}
+                  </div>
+                  <div className='other'>
+                    {gallery.map((galArr, index) => {
+                      const [src] = galArr
+                      return (
+                        <img
+                          onMouseEnter={() => {
+                            setSelected(index)
+                          }}
+                          onTouchStart={() => {
+                            setSelected(index)
+                          }}
+                          key={index}
+                          src={`../assets/${src}`}
+                          alt=''
+                        />
+                      )
+                    })}
+                  </div>
+                </article>
+                <span className='spanPrice'>{price}</span>
+                <h3
+                  dir={lang ? 'rtl' : 'lrt'}
+                  style={{
+                    textAlign: lang ? 'right' : 'left',
+                    alignSelf: lang ? 'flex-end' : 'flex-start',
+                  }}
+                >
+                  {lang ? 'تفاصيل المنتج:' : 'Product Details:'}
+                </h3>
+                <ul
+                  style={{
+                    textAlign: lang ? 'right' : 'left',
+                    alignSelf: lang ? 'flex-end' : 'flex-start',
+                  }}
+                >
+                  <li dir='rtl'>
+                    {lang
+                      ? `اسم العلامة التجارية: ${Brand}`
+                      : `Brand name: ${Brand}`}
+                  </li>
+                  <li dir='rtl'>
+                    {lang
+                      ? `النموذج: ${Model_Number}`
+                      : `Model: ${Model_Number}`}
+                  </li>
+                  <li dir='rtl'>
+                    {lang ? `المصدر: ${Source}` : `Source: ${Source}`}
+                  </li>
+                  <li dir='rtl'>
+                    {lang
+                      ? `الدقة: ${Resolution}`
+                      : `Resolution: ${Resolution}`}
+                  </li>
+                  <li dir='rtl'>
+                    {lang ? `الوزن: ${Weight}` : `Weight: ${Weight}`}
+                  </li>
+                  <li dir='rtl'>
+                    {lang
+                      ? `سطوع الألوان: ${Color_Brightness}`
+                      : `Color Brightness: ${Color_Brightness}`}
+                  </li>
+                  <li dir='rtl'>
+                    {lang
+                      ? `نسبة التباين: ${Contrast_Ratio}`
+                      : `Contrast Ratio: ${Contrast_Ratio}`}
+                  </li>
+                  <li dir='rtl'>
+                    {lang
+                      ? `عمر مصدر الضوء في وضع الاقتصاد: ${Light_Source_Life_Economy_Mode}`
+                      : `Light Source Life Economy Mode: ${Light_Source_Life_Economy_Mode}`}
+                  </li>
+                  <li dir='rtl'>
+                    {lang
+                      ? `عمر مصدر الضوء في وضع العادي: ${Light_Source_Life_Normal_Mode}`
+                      : `Light Source Life Normal Mode: ${Light_Source_Life_Normal_Mode}`}
+                  </li>
+                  <li dir='rtl'>
+                    {lang
+                      ? `نسبة العرض: ${Aspect_Ratio}`
+                      : `Aspect Ratio: ${Aspect_Ratio}`}
+                  </li>
+                </ul>
+              </article>
+            </>
+          )}
         </section>
 
         {/* Rest of the component remains unchanged for brevity. */}

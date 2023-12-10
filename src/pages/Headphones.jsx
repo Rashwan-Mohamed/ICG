@@ -25,6 +25,7 @@ function Headphones() {
             price,
             link,
             productIMG,
+            gallery,
           } = prod
           return (
             <ProductCat
@@ -38,6 +39,7 @@ function Headphones() {
               price={price}
               link={link}
               turn={index % 2 == 0}
+              gallery={gallery}
             ></ProductCat>
           )
         })}
