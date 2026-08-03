@@ -11,6 +11,10 @@ node_modules
 dist
 dist-ssr
 *.local
+.env.local
+
+# Backend secrets — never commit real DB/admin credentials.
+backend/config.local.php
 
 # Editor directories and files
 .vscode/*

@@ -1,10 +1,10 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useGlobalContext } from '../context'
-import data from '../data/product-data.json'
+import { resolveImage } from '../services/api'
 import Toggle from './Toggle'
 function Cart({ setCartShow, bad }) {
-  const { cart, removeAll } = useGlobalContext()
+  const { cart, removeAll, products } = useGlobalContext()
   const [cartProducts, setcartProducts] = useState([])
   const navigate = useNavigate()
   const getTotal = () => {
@@ -17,7 +17,7 @@ function Cart({ setCartShow, bad }) {
   }
   useEffect(() => {
     let setl = []
-    data.forEach((item) => {
+    products.forEach((item) => {
       if (cart.length >= 1) {
         cart.forEach((cars) => {
           if (cars.id === item.id) {
@@ -27,7 +27,7 @@ function Cart({ setCartShow, bad }) {
       }
     })
     setcartProducts(() => setl)
-  }, [cart])
+  }, [cart, products])
 
   useEffect(() => {
     const handleClick = (e) => {
@@ -52,12 +52,12 @@ function Cart({ setCartShow, bad }) {
           <ul className='disPro'>
             {cartProducts.length >= 1 &&
               cartProducts.map((item) => {
-                const { product, price, cartImg, num, id } = item
+                const { product, price, main_image, num, id } = item
                 return (
                   <li key={id}>
-                    <img src={`/assets/${cartImg}`} alt={product} />
+                    <img src={resolveImage(main_image)} alt={product} />
                     <span> {product}</span>
-                    <span> $ {price}</span>
+                    <span> {price} EGB</span>
                     <Toggle amount={num} id={id}></Toggle>
                   </li>
                 )
@@ -87,7 +87,7 @@ function Cart({ setCartShow, bad }) {
             )}
           </ul>
           <h5>total</h5>
-          <span>$ {getTotal()}</span>
+          <span>{getTotal()} EGB</span>
           <button
             onClick={() => {
               if (cartProducts.length >= 1) {

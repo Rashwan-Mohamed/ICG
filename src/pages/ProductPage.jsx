@@ -1,95 +1,155 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useParams, useNavigate, useLocation } from 'react-router-dom'
-// import { data } from '../data/CategoryData'
-import { HEADPHONES as data } from '../data/CategoryData'
-import SeeProduct from '../components/SeeProduct'
-import Category from '../components/Category'
-import Bringing from '../components/Bringing'
+import { useParams, useNavigate, useLocation } from 'react-router-dom'
 import Footer from '../components/Footer'
-import Toggle from '../components/Toggle'
 import ProductCat from '../components/ProductCat'
 import { useGlobalContext } from '../context'
 import { useWidth } from '../useWidt'
+import { resolveImage } from '../services/api'
 
 function ProductPage() {
-  const [product, setProduct] = useState(0)
   const [num, setNum] = useState(1)
-  const [loading, setIsLoading] = useState(true)
   const location = useLocation().pathname
-  const { amount, add, cart, lang } = useGlobalContext()
+  const { add, lang, products, productsLoading } = useGlobalContext()
   const [sel, setSelected] = useState(0)
-  const [similar, setSimilar] = useState([])
   const width = useWidth()
-  console.log(width, 'width Rash')
   useEffect(() => {
     setNum(1)
+    setSelected(0)
+    window.scrollTo(0, 0)
   }, [location])
   const navigate = useNavigate()
-  let productID = useParams().id
-  useEffect(() => {
-    let theOne = data.find((obk) => obk.id === productID)
-    setProduct(theOne)
-    setIsLoading(false)
-    window.scrollTo(0, 0)
-    let Simadd = []
-    data.forEach((pros) => {
-      const { price: comp, id: ip } = pros
-      if (ip === theOne.id) return
-      if (
-        Math.abs(
-          Number(comp.replace(/,/g, '')) -
-            Number(theOne.price.replace(/,/g, ''))
-        ) >= 50 ||
-        Math.abs(
-          Number(comp.replace(/,/g, '')) -
-            Number(theOne.price.replace(/,/g, ''))
-        ) <= 200
-      ) {
-        if (Simadd.length < 3) {
-          Simadd.push(pros)
-        }
-      }
-    })
-    setSimilar(Simadd)
-  }, [productID])
+  const productID = Number(useParams().id)
+
+  const product = products.find((p) => p.id === productID)
+
+  const similar = product
+    ? products
+        .filter(
+          (p) =>
+            p.id !== product.id &&
+            Math.abs(Number(p.price) - Number(product.price)) <= 500
+        )
+        .slice(0, 3)
+    : []
+
+  if (productsLoading) {
+    return (
+      <header className='headHeader'>
+        <h1>Loading...</h1>
+      </header>
+    )
+  }
+  if (!product) {
+    return (
+      <header className='headHeader'>
+        <h1>Product not found</h1>
+      </header>
+    )
+  }
+
   const {
     product: name,
-    productIMG,
     price,
-    id,
     detail,
     gallery,
-    Weight,
-    Source,
-    Resolution,
-    Color_Brightness,
-    White_Brightness,
-    Contrast_Ratio,
-    Portability,
-    Model_Number,
-    Light_Source_Life_Economy_Mode,
-    Light_Source_Life_Normal_Mode,
-    Aspect_Ratio,
-    feature,
-    Brand,
+    weight,
+    source,
+    resolution,
+    color_brightness,
+    contrast_ratio,
+    model_number,
+    light_source_life_economy_mode,
+    light_source_life_normal_mode,
+    aspect_ratio,
+    brand,
   } = product
-  let seso = []
-  // if (productIMG) {
-  //   seso = productIMG.split('/')
-  // }
-  // useEffect(() => {
-  //   let Simadd = []
-  //   data.forEach((pros) => {
-  //     const { price: comp } = pros
-  //     console.log(Math.abs(comp - price), comp, price)
-  //     if (Math.abs(comp - price) <= 3000) {
-  //       Simadd.push(pros)
-  //     }
-  //   })
-  //   setSimilar(Simadd)
-  //   console.log(similar, Simadd, 'similar')
-  // }, [productID])
-  if (loading) return <h1>Loading...</h1>
+
+  const specs = (
+    <ul
+      style={{
+        textAlign: lang ? 'right' : 'left',
+        alignSelf: lang ? 'flex-end' : 'flex-start',
+      }}
+    >
+      <li dir='rtl'>
+        {lang ? `اسم العلامة التجارية: ${brand}` : `Brand name: ${brand}`}
+      </li>
+      <li dir='rtl'>
+        {lang ? `النموذج: ${model_number}` : `Model: ${model_number}`}
+      </li>
+      <li dir='rtl'>{lang ? `المصدر: ${source}` : `Source: ${source}`}</li>
+      <li dir='rtl'>
+        {lang ? `الدقة: ${resolution}` : `Resolution: ${resolution}`}
+      </li>
+      <li dir='rtl'>{lang ? `الوزن: ${weight}` : `Weight: ${weight}`}</li>
+      <li dir='rtl'>
+        {lang
+          ? `سطوع الألوان: ${color_brightness}`
+          : `Color Brightness: ${color_brightness}`}
+      </li>
+      <li dir='rtl'>
+        {lang
+          ? `نسبة التباين: ${contrast_ratio}`
+          : `Contrast Ratio: ${contrast_ratio}`}
+      </li>
+      <li dir='rtl'>
+        {lang
+          ? `عمر مصدر الضوء في وضع الاقتصاد: ${light_source_life_economy_mode}`
+          : `Light Source Life Economy Mode: ${light_source_life_economy_mode}`}
+      </li>
+      <li dir='rtl'>
+        {lang
+          ? `عمر مصدر الضوء في وضع العادي: ${light_source_life_normal_mode}`
+          : `Light Source Life Normal Mode: ${light_source_life_normal_mode}`}
+      </li>
+      <li dir='rtl'>
+        {lang ? `نسبة العرض: ${aspect_ratio}` : `Aspect Ratio: ${aspect_ratio}`}
+      </li>
+    </ul>
+  )
+
+  const gallerySection = (
+    <article className='gallary'>
+      <div className='viewed'>
+        {gallery.map((img, index) => (
+          <img
+            key={img.id}
+            className={sel === index ? `yes notYou` : `notYou`}
+            src={resolveImage(img.image_path)}
+            alt=''
+          />
+        ))}
+      </div>
+      <div className='other'>
+        {gallery.map((img, index) => (
+          <img
+            onMouseEnter={() => setSelected(index)}
+            onTouchStart={() => setSelected(index)}
+            key={img.id}
+            src={resolveImage(img.image_path)}
+            alt=''
+          />
+        ))}
+      </div>
+    </article>
+  )
+
+  const addToCart = (
+    <div className='addToCart'>
+      <div className='addMore'>
+        <button onClick={() => setNum((n) => Math.max(1, n - 1))}>-</button>
+        {num}
+        <button onClick={() => setNum((n) => n + 1)}>+</button>
+      </div>
+      <button
+        className='seePro'
+        onClick={() => add(product.id, num)}
+      >
+        {lang ? 'أضف إلى السلة' : 'ADD TO CART'}
+      </button>
+    </div>
+  )
+
   return (
     <>
       <main className='productPage'>
@@ -106,43 +166,12 @@ function ProductPage() {
         <section className='ProductCat '>
           {width > 520 ? (
             <>
-              {' '}
-              <article className='gallary'>
-                <div className='viewed'>
-                  {gallery.map((galArr, index) => {
-                    const [src] = galArr
-                    return (
-                      <img
-                        key={index}
-                        className={sel === index ? `yes notYou` : `notYou`}
-                        src={`../assets/${src}`}
-                        alt=''
-                      />
-                    )
-                  })}
-                </div>
-                <div className='other'>
-                  {gallery.map((galArr, index) => {
-                    const [src] = galArr
-                    return (
-                      <img
-                        onMouseEnter={() => {
-                          setSelected(index)
-                        }}
-                        onTouchStart={() => {
-                          setSelected(index)
-                        }}
-                        key={index}
-                        src={`../assets/${src}`}
-                        alt=''
-                      />
-                    )
-                  })}
-                </div>
-              </article>
+              {gallerySection}
               <article className='details'>
-                <h1>{detail}</h1>
-                <span className='spanPrice'>{price}</span>
+                <h1>{name}</h1>
+                <span className='spanPrice'>{price} EGB</span>
+                <p style={{ textAlign: lang ? 'right' : 'left' }}>{detail}</p>
+                {addToCart}
                 <h3
                   dir={lang ? 'rtl' : 'lrt'}
                   style={{
@@ -152,199 +181,44 @@ function ProductPage() {
                 >
                   {lang ? 'تفاصيل المنتج:' : 'Product Details:'}
                 </h3>
-                <ul
-                  style={{
-                    textAlign: lang ? 'right' : 'left',
-                    alignSelf: lang ? 'flex-end' : 'flex-start',
-                  }}
-                >
-                  <li dir='rtl'>
-                    {lang
-                      ? `اسم العلامة التجارية: ${Brand}`
-                      : `Brand name: ${Brand}`}
-                  </li>
-                  <li dir='rtl'>
-                    {lang
-                      ? `النموذج: ${Model_Number}`
-                      : `Model: ${Model_Number}`}
-                  </li>
-                  <li dir='rtl'>
-                    {lang ? `المصدر: ${Source}` : `Source: ${Source}`}
-                  </li>
-                  <li dir='rtl'>
-                    {lang
-                      ? `الدقة: ${Resolution}`
-                      : `Resolution: ${Resolution}`}
-                  </li>
-                  <li dir='rtl'>
-                    {lang ? `الوزن: ${Weight}` : `Weight: ${Weight}`}
-                  </li>
-                  <li dir='rtl'>
-                    {lang
-                      ? `سطوع الألوان: ${Color_Brightness}`
-                      : `Color Brightness: ${Color_Brightness}`}
-                  </li>
-                  <li dir='rtl'>
-                    {lang
-                      ? `نسبة التباين: ${Contrast_Ratio}`
-                      : `Contrast Ratio: ${Contrast_Ratio}`}
-                  </li>
-                  <li dir='rtl'>
-                    {lang
-                      ? `عمر مصدر الضوء في وضع الاقتصاد: ${Light_Source_Life_Economy_Mode}`
-                      : `Light Source Life Economy Mode: ${Light_Source_Life_Economy_Mode}`}
-                  </li>
-                  <li dir='rtl'>
-                    {lang
-                      ? `عمر مصدر الضوء في وضع العادي: ${Light_Source_Life_Normal_Mode}`
-                      : `Light Source Life Normal Mode: ${Light_Source_Life_Normal_Mode}`}
-                  </li>
-                  <li dir='rtl'>
-                    {lang
-                      ? `نسبة العرض: ${Aspect_Ratio}`
-                      : `Aspect Ratio: ${Aspect_Ratio}`}
-                  </li>
-                </ul>
+                {specs}
               </article>
             </>
           ) : (
-            <>
-              <article className='phoneStyle'>
-                <h1>{detail}</h1>
-                <article className='gallary'>
-                  <div className='viewed'>
-                    {gallery.map((galArr, index) => {
-                      const [src] = galArr
-                      return (
-                        <img
-                          key={index}
-                          className={sel === index ? `yes notYou` : `notYou`}
-                          src={`../assets/${src}`}
-                          alt=''
-                        />
-                      )
-                    })}
-                  </div>
-                  <div className='other'>
-                    {gallery.map((galArr, index) => {
-                      const [src] = galArr
-                      return (
-                        <img
-                          onMouseEnter={() => {
-                            setSelected(index)
-                          }}
-                          onTouchStart={() => {
-                            setSelected(index)
-                          }}
-                          key={index}
-                          src={`../assets/${src}`}
-                          alt=''
-                        />
-                      )
-                    })}
-                  </div>
-                </article>
-                <span className='spanPrice'>{price}</span>
-                <h3
-                  dir={lang ? 'rtl' : 'lrt'}
-                  style={{
-                    textAlign: lang ? 'right' : 'left',
-                    alignSelf: lang ? 'flex-end' : 'flex-start',
-                  }}
-                >
-                  {lang ? 'تفاصيل المنتج:' : 'Product Details:'}
-                </h3>
-                <ul
-                  style={{
-                    textAlign: lang ? 'right' : 'left',
-                    alignSelf: lang ? 'flex-end' : 'flex-start',
-                  }}
-                >
-                  <li dir='rtl'>
-                    {lang
-                      ? `اسم العلامة التجارية: ${Brand}`
-                      : `Brand name: ${Brand}`}
-                  </li>
-                  <li dir='rtl'>
-                    {lang
-                      ? `النموذج: ${Model_Number}`
-                      : `Model: ${Model_Number}`}
-                  </li>
-                  <li dir='rtl'>
-                    {lang ? `المصدر: ${Source}` : `Source: ${Source}`}
-                  </li>
-                  <li dir='rtl'>
-                    {lang
-                      ? `الدقة: ${Resolution}`
-                      : `Resolution: ${Resolution}`}
-                  </li>
-                  <li dir='rtl'>
-                    {lang ? `الوزن: ${Weight}` : `Weight: ${Weight}`}
-                  </li>
-                  <li dir='rtl'>
-                    {lang
-                      ? `سطوع الألوان: ${Color_Brightness}`
-                      : `Color Brightness: ${Color_Brightness}`}
-                  </li>
-                  <li dir='rtl'>
-                    {lang
-                      ? `نسبة التباين: ${Contrast_Ratio}`
-                      : `Contrast Ratio: ${Contrast_Ratio}`}
-                  </li>
-                  <li dir='rtl'>
-                    {lang
-                      ? `عمر مصدر الضوء في وضع الاقتصاد: ${Light_Source_Life_Economy_Mode}`
-                      : `Light Source Life Economy Mode: ${Light_Source_Life_Economy_Mode}`}
-                  </li>
-                  <li dir='rtl'>
-                    {lang
-                      ? `عمر مصدر الضوء في وضع العادي: ${Light_Source_Life_Normal_Mode}`
-                      : `Light Source Life Normal Mode: ${Light_Source_Life_Normal_Mode}`}
-                  </li>
-                  <li dir='rtl'>
-                    {lang
-                      ? `نسبة العرض: ${Aspect_Ratio}`
-                      : `Aspect Ratio: ${Aspect_Ratio}`}
-                  </li>
-                </ul>
-              </article>
-            </>
+            <article className='phoneStyle'>
+              <h1>{name}</h1>
+              {gallerySection}
+              <span className='spanPrice'>{price} EGB</span>
+              <p style={{ textAlign: lang ? 'right' : 'left' }}>{detail}</p>
+              {addToCart}
+              <h3
+                dir={lang ? 'rtl' : 'lrt'}
+                style={{
+                  textAlign: lang ? 'right' : 'left',
+                  alignSelf: lang ? 'flex-end' : 'flex-start',
+                }}
+              >
+                {lang ? 'تفاصيل المنتج:' : 'Product Details:'}
+              </h3>
+              {specs}
+            </article>
           )}
         </section>
 
-        {/* Rest of the component remains unchanged for brevity. */}
-
         <section className='mayAlos'>
           <h2>{lang ? 'منتجات مماثلة' : 'Similar Products'}</h2>
-          {similar.map((prod, index) => {
-            const {
-              product,
-              feature,
-              detail,
-              label,
-              alt,
-              src,
-              price,
-              link,
-              productIMG,
-              id,
-            } = prod
-
-            return (
-              <ProductCat
-                key={id}
-                product={product}
-                feature={feature}
-                detail={detail}
-                label={label}
-                alt={alt}
-                place={productIMG}
-                price={price}
-                link={link}
-                turn={index % 2 === 0}
-              ></ProductCat>
-            )
-          })}
+          {similar.map((prod, index) => (
+            <ProductCat
+              key={prod.id}
+              id={prod.id}
+              product={prod.product}
+              feature={prod.feature}
+              detail={prod.detail}
+              price={prod.price}
+              mainImage={prod.main_image}
+              turn={index % 2 === 0}
+            ></ProductCat>
+          ))}
         </section>
       </main>
       <Footer></Footer>

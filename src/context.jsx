@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext, useReducer } from 'react'
 import reducer from './reducer'
+import { fetchProducts } from './services/api'
 
 const AppContext = React.createContext()
 
@@ -10,9 +11,18 @@ const initialState = {
 const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState)
   const [lang, setLangu] = useState(true)
+  const [products, setProducts] = useState([])
+  const [productsLoading, setProductsLoading] = useState(true)
   const changeLanguage = (language) => {
     setLangu(language)
   }
+
+  useEffect(() => {
+    fetchProducts()
+      .then(setProducts)
+      .catch((err) => console.error('Failed to load products', err))
+      .finally(() => setProductsLoading(false))
+  }, [])
   const add = (id, num) => {
     dispatch({ type: 'add', payload: { id, num } })
   }
@@ -36,6 +46,8 @@ const AppProvider = ({ children }) => {
         removeAll,
         lang,
         changeLanguage,
+        products,
+        productsLoading,
       }}
     >
       {children}

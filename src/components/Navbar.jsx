@@ -124,10 +124,10 @@ function Navbar() {
         <h3 className='Legs' onClick={() => changeLanguage(!lang)}>
           {lang ? 'en' : 'ar'}
         </h3>
-        {/* <div ref={bad} onClick={() => setCartShow(!cartShow)} className='press'>
-      {cart.length > 0 && <span>{cart.length}</span>}
-      <img src='\assets\shared\desktop\icon-cart.svg' alt='icon-cart' />
-    </div> */}
+        <div ref={bad} onClick={() => setCartShow(!cartShow)} className='press'>
+          {cart.length > 0 && <span>{cart.length}</span>}
+          <img src='/assets/shared/desktop/icon-cart.svg' alt='icon-cart' />
+        </div>
       </div>
       {cartShow && <Cart bad={bad} setCartShow={setCartShow}></Cart>}
     </nav>

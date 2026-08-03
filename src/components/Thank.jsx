@@ -1,37 +1,40 @@
 import react from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useGlobalContext } from '../context'
+import { resolveImage } from '../services/api'
 
 function Thank({ cartProducts, grand, setThank }) {
   const { removeAll } = useGlobalContext()
 
-  console.log(cartProducts)
   const navigate = useNavigate()
   return (
     <section className='finalGoodBye cartOverlay'>
       <section className='sectionBye'>
         <div className='doneRight'>✓</div>
-        <h1>thank you for your order</h1>
+        <h1>your order summary is ready</h1>
 
-        <p>You will receive an email confirmation shortly.</p>
+        <p>
+          We opened WhatsApp with your order details — send that message to
+          confirm with us.
+        </p>
 
         <div className='summerizeo'>
           <ul className='disPro'>
             {cartProducts.length >= 1 &&
               cartProducts.map((item) => {
-                const { product, price, cartImg, num, id } = item
+                const { product, price, main_image, num, id } = item
                 return (
                   <li key={id}>
-                    <img src={`/assets/${cartImg}`} alt={product} />
+                    <img src={resolveImage(main_image)} alt={product} />
                     <span> {product}</span>
-                    <span> $ {price}</span>
+                    <span> {price} EGB</span>
                     <span>x{num}</span>
                   </li>
                 )
               })}
           </ul>
           <div className='grandTotal'>
-            <span>grand total:</span> $ {grand}
+            <span>grand total:</span> {grand} EGB
           </div>
         </div>
         <button

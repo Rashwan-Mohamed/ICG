@@ -1,32 +1,20 @@
 import React from 'react'
 import SeeProduct from './SeeProduct'
-import { useWidth } from '../useWidt'
+import { resolveImage } from '../services/api'
 
-function ProductCat({
-  product,
-  feature,
-  detail,
-  label,
-  alt,
-  place,
-  price,
-  link,
-  turn,
-  gallery,
-}) {
-  let seso = place.split('/')
-  const width = useWidth()
-  console.log(place)
+function ProductCat({ id, product, feature, detail, price, mainImage, turn }) {
   return (
     <section className='ProductCat '>
-      {/* <img src={`/assets/${place}`} alt='' /> */}
-      <img src={`/assets/${gallery[0][0]}`} alt='' />
+      <img src={resolveImage(mainImage)} alt={product} />
       <article className='details'>
         {/* <p className='desc'>{feature}</p> */}
         <h1>{product}</h1>
         <p className='paraDetail'>{detail}</p>
-        <h3>{price.match(/\d+/g)} EGB</h3>
-        <SeeProduct where={link} sases={'seeProduct'}></SeeProduct>
+        <h3>{price} EGB</h3>
+        <SeeProduct
+          where={`/product_detail/${id}`}
+          sases={'seeProduct'}
+        ></SeeProduct>
       </article>
     </section>
   )

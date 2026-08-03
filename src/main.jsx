@@ -10,6 +10,7 @@ import {
   Earphones,
   ProductPage,
   Checkout,
+  Admin,
 } from './pages'
 import { AppProvider } from './context'
 const router = createBrowserRouter([
@@ -26,6 +27,7 @@ const router = createBrowserRouter([
       { path: 'earphones', element: <Earphones></Earphones> },
       { path: 'product_detail/:id', element: <ProductPage></ProductPage> },
       { path: 'checkout', element: <Checkout></Checkout> },
+      { path: 'admin', element: <Admin></Admin> },
     ],
   },
 ])

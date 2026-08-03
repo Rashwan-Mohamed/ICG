@@ -15,5 +15,5 @@ function icg_config($key, $default = null)
         return $envValue;
     }
 
-    return $local[$key] ?? $default;
+    return isset($local[$key]) ? $local[$key] : $default;
 }

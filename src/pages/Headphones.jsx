@@ -1,15 +1,39 @@
-import React, { useEffect, useState } from 'react'
-import { HEADPHONES } from '../data/CategoryData'
+import React, { useEffect, useState, useMemo } from 'react'
 import ProductCat from '../components/ProductCat'
-import Category from '../components/Category'
-import Bringing from '../components/Bringing'
 import Footer from '../components/Footer'
+import { useGlobalContext } from '../context'
+
 function Headphones() {
+  const { products, productsLoading } = useGlobalContext()
   const [sortBy, setSortBy] = useState('price highest')
   const [show, setShow] = useState(false)
   useEffect(() => {
     scrollTo(0, 0)
   }, [])
+
+  const sorted = useMemo(() => {
+    const list = [...products]
+    switch (sortBy) {
+      case 'Price Highest':
+        return list.sort((a, b) => b.price - a.price)
+      case 'Price lowest':
+        return list.sort((a, b) => a.price - b.price)
+      case 'Lumens Highest':
+        return list.sort((a, b) =>
+          String(b.color_brightness || '').localeCompare(
+            String(a.color_brightness || '')
+          )
+        )
+      case 'Lumens lowest':
+        return list.sort((a, b) =>
+          String(a.color_brightness || '').localeCompare(
+            String(b.color_brightness || '')
+          )
+        )
+      default:
+        return list
+    }
+  }, [products, sortBy])
 
   return (
     <>
@@ -56,39 +80,23 @@ function Headphones() {
             </div>
           )}
         </section>
-        {HEADPHONES.map((prod, index) => {
-          const {
-            product,
-            feature,
-            detail,
-            label,
-            alt,
-            src,
-            price,
-            link,
-            productIMG,
-            gallery,
-          } = prod
-          console.log(Number(price.match(/\d+/g)));
-          return (
-            <ProductCat
-              key={product}
-              product={product}
-              feature={feature}
-              detail={detail}
-              label={label}
-              alt={alt}
-              place={productIMG}
-              price={price}
-              link={link}
-              turn={index % 2 == 0}
-              gallery={gallery}
-            ></ProductCat>
-          )
-        })}
+        {productsLoading && <p className='loadingProducts'>Loading...</p>}
+        {!productsLoading && sorted.length === 0 && (
+          <p className='loadingProducts'>No products yet.</p>
+        )}
+        {sorted.map((prod, index) => (
+          <ProductCat
+            key={prod.id}
+            id={prod.id}
+            product={prod.product}
+            feature={prod.feature}
+            detail={prod.detail}
+            price={prod.price}
+            mainImage={prod.main_image}
+            turn={index % 2 === 0}
+          ></ProductCat>
+        ))}
       </main>
-      {/* <Category></Category> */}
-      {/* <Bringing></Bringing> */}
       <Footer></Footer>
     </>
   )
