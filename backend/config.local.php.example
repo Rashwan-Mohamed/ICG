@@ -1,0 +1,20 @@
+<?php
+// Copy this file to config.local.php and fill in your real values.
+// config.local.php is gitignored (see .gitignore) and is only used as a
+// fallback when the environment variables below are not set — most hosts
+// (InfinityFree included) let you set real DB credentials as env vars in
+// their control panel, which is the safer option.
+
+return [
+    'DB_HOST' => 'localhost',
+    'DB_NAME' => 'icg_store',
+    'DB_USER' => 'icg_user',
+    'DB_PASS' => 'change-me',
+
+    // Comma-separated list of frontend origins allowed to call this API.
+    'ALLOWED_ORIGINS' => 'http://localhost:5173',
+
+    // Used once by seed.php to create the first admin account.
+    'ADMIN_USERNAME' => 'admin',
+    'ADMIN_PASSWORD' => 'change-me-too',
+];

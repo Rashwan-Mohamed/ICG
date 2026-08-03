@@ -1,0 +1,7 @@
+# Uploaded files are user-supplied — never execute anything in here as code.
+# (No php_flag/mod_php directives here on purpose: many free hosts run PHP via
+# CGI/FastCGI, where those directives error out and break the whole directory.)
+<FilesMatch "\.(php|phtml|php\d|phar|cgi|pl)$">
+    Require all denied
+</FilesMatch>
+Options -ExecCGI -Indexes
