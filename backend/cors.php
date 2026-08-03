@@ -4,7 +4,7 @@ require_once __DIR__ . '/config.php';
 function icg_apply_cors()
 {
     $allowed = array_map('trim', explode(',', icg_config('ALLOWED_ORIGINS', '')));
-    $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
+    $origin = isset($_SERVER['HTTP_ORIGIN']) ? $_SERVER['HTTP_ORIGIN'] : '';
 
     if ($origin !== '' && in_array($origin, $allowed, true)) {
         header("Access-Control-Allow-Origin: {$origin}");
