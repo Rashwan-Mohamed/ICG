@@ -97,7 +97,7 @@ function Navbar() {
       />
       <img srcSet='\assets\shared\desktop\logo.svg' alt='audiophile logo' />
     </picture> */}
-        <h2 className='LEGO'>ICG</h2>
+        <h2 className='LEGO'>PRJ-X</h2>
         <ul className='cats'>
           <li className={isHome === '/' ? 'here' : 'undefined'}>
             <Link style={{ fontSize: lang ? '16px' : '13px' }} to={'/'}>

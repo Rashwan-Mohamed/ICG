@@ -41,8 +41,8 @@ function Home() {
             </h1>
             <p dir='rtl'>
               {lang
-                ? 'تجربة رؤية مبتكرة للصور السينمائية وترفيه مغمور مع مشغلات السينما المنزلية الجديدة من ICG. استمتع بتجارب حقيقية مع ألوان أصيلة وتفاصيل ساطعة ومظلمة مدعومة بتقنيات CinematicColor و HDR-PRO في سينما منزلك، لتحظى بتجارب حقيقية ومذهلة للعيون.'
-                : 'Experience innovative cinematic visuals and immersive entertainment with new ICG home projectors. Bask in authentic colors and bright and dark details supported by CinematicColor and HDR-PRO technologies in your home cinema for the most genuine, eye-popping experiences.'}
+                ? 'تجربة رؤية مبتكرة للصور السينمائية وترفيه مغمور مع مشغلات السينما المنزلية الجديدة من PRJ-X. استمتع بتجارب حقيقية مع ألوان أصيلة وتفاصيل ساطعة ومظلمة مدعومة بتقنيات CinematicColor و HDR-PRO في سينما منزلك، لتحظى بتجارب حقيقية ومذهلة للعيون.'
+                : 'Experience innovative cinematic visuals and immersive entertainment with new PRJ-X home projectors. Bask in authentic colors and bright and dark details supported by CinematicColor and HDR-PRO technologies in your home cinema for the most genuine, eye-popping experiences.'}
             </p>
             <button onClick={() => naviage('/headphones')} className='seePro'>
               {lang ? 'رؤية المنتجات' : 'SEE PRODUCTS'}
@@ -80,8 +80,8 @@ function Home() {
               }}
             >
               {lang
-                ? 'جلب الوضوح والتعاون الأكبر إلى عملك مع مشغلات ICG ، مصممة لتناسب ميزانيتك مع دعم احتياجات مكان العمل الحديثة ، بما في ذلك التنقل اللاسلكي وتكلفة امتلاك منخفضة.'
-                : 'Bring greater clarity and collaboration to your business with ICG projectors, designed to fit your budget while supporting today’s workplace needs, including wireless mobility and a low cost of ownership.'}
+                ? 'جلب الوضوح والتعاون الأكبر إلى عملك مع مشغلات PRJ-X ، مصممة لتناسب ميزانيتك مع دعم احتياجات مكان العمل الحديثة ، بما في ذلك التنقل اللاسلكي وتكلفة امتلاك منخفضة.'
+                : 'Bring greater clarity and collaboration to your business with PRJ-X projectors, designed to fit your budget while supporting today’s workplace needs, including wireless mobility and a low cost of ownership.'}
             </p>
             <SeeProduct
               style={{
@@ -108,8 +108,8 @@ function Home() {
             }}
           >
             {lang
-              ? 'من الفصول الدراسية الصغيرة إلى القاعات الكبيرة ، تم تصميم مشغلات ICG متعددة الوسائط والشاشات لتكون موثوقة وتقدم تكلفة ملكية إجمالية منخفضة تجعلها استثمارات تعليمية مثالية.'
-              : 'From small classrooms to large auditoriums, ICG line of multimedia projectors, displays are designed to be reliable and offer a low total cost of ownership that makes them ideal education investments.'}
+              ? 'من الفصول الدراسية الصغيرة إلى القاعات الكبيرة ، تم تصميم مشغلات PRJ-X متعددة الوسائط والشاشات لتكون موثوقة وتقدم تكلفة ملكية إجمالية منخفضة تجعلها استثمارات تعليمية مثالية.'
+              : 'From small classrooms to large auditoriums, PRJ-X line of multimedia projectors, displays are designed to be reliable and offer a low total cost of ownership that makes them ideal education investments.'}
           </p>
           <SeeProduct where={'/headphones'}></SeeProduct>
         </section>

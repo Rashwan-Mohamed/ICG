@@ -29,12 +29,12 @@ function Footer({ className }) {
         </picture>
         <p dir={lang ? 'rtl' : 'lrt'} className='audioSpecialist'>
           {lang
-            ? 'ICG هي وجهتك النهائية لشراء مشغلات البيانات. نحن مجموعة متحمسة من الخبراء ملتزمة بمساعدتك في العثور على أفضل جهاز عرض لاحتياجاتك. تفضل بزيارة صالة العرض الخاصة بنا عبر الإنترنت - لدينا مجموعة واسعة من الطرازات والميزات التي تناسب أي ميزانية وتفضيل.'
-            : 'ICG is your ultimate destination for data show projectors. We’re a passionate group of experts who are dedicated to helping you find the best projector for your needs. Come and check out our online showroom - we have a wide range of models and features to suit any budget and preference.'}
+            ? 'PRJ-X هي وجهتك النهائية لشراء مشغلات البيانات. نحن مجموعة متحمسة من الخبراء ملتزمة بمساعدتك في العثور على أفضل جهاز عرض لاحتياجاتك. تفضل بزيارة صالة العرض الخاصة بنا عبر الإنترنت - لدينا مجموعة واسعة من الطرازات والميزات التي تناسب أي ميزانية وتفضيل.'
+            : 'PRJ-X is your ultimate destination for data show projectors. We’re a passionate group of experts who are dedicated to helping you find the best projector for your needs. Come and check out our online showroom - we have a wide range of models and features to suit any budget and preference.'}
         </p>
 
         <address dir={lang ? 'rtl' : 'lrt'} className='dresso'>
-          {/* <strong>ICG</strong> */}
+          {/* <strong>PRJ-X</strong> */}
           {/* <a href='mailto:john.doe@example.com'>john.doe@example.com</a> */}
 
           {lang ? 'مول البستان الدور الرابع' : ' 4th Floor, Al-Bustan Mall'}
