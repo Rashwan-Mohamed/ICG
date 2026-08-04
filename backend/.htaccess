@@ -1,0 +1,7 @@
+# Many shared hosts run PHP via CGI/FastCGI, which strips the Authorization
+# header before PHP ever sees it. This forwards it explicitly so
+# $_SERVER['HTTP_AUTHORIZATION'] / REDIRECT_HTTP_AUTHORIZATION are populated
+# (backend/auth.php already checks both names).
+RewriteEngine On
+RewriteCond %{HTTP:Authorization} ^(.*)
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
