@@ -44,7 +44,7 @@ function Home() {
                 ? 'تجربة رؤية مبتكرة للصور السينمائية وترفيه مغمور مع مشغلات السينما المنزلية الجديدة من PRJ-X. استمتع بتجارب حقيقية مع ألوان أصيلة وتفاصيل ساطعة ومظلمة مدعومة بتقنيات CinematicColor و HDR-PRO في سينما منزلك، لتحظى بتجارب حقيقية ومذهلة للعيون.'
                 : 'Experience innovative cinematic visuals and immersive entertainment with new PRJ-X home projectors. Bask in authentic colors and bright and dark details supported by CinematicColor and HDR-PRO technologies in your home cinema for the most genuine, eye-popping experiences.'}
             </p>
-            <button onClick={() => naviage('/headphones')} className='seePro'>
+            <button onClick={() => naviage('/projectors')} className='seePro'>
               {lang ? 'رؤية المنتجات' : 'SEE PRODUCTS'}
             </button>
           </article>
@@ -88,7 +88,7 @@ function Home() {
                 fontSize: lang ? '18px' : '15px',
               }}
               custome={'custom'}
-              where={'/headphones'}
+              where={'/projectors'}
             ></SeeProduct>
           </article>
         </section>
@@ -111,7 +111,7 @@ function Home() {
               ? 'من الفصول الدراسية الصغيرة إلى القاعات الكبيرة ، تم تصميم مشغلات PRJ-X متعددة الوسائط والشاشات لتكون موثوقة وتقدم تكلفة ملكية إجمالية منخفضة تجعلها استثمارات تعليمية مثالية.'
               : 'From small classrooms to large auditoriums, PRJ-X line of multimedia projectors, displays are designed to be reliable and offer a low total cost of ownership that makes them ideal education investments.'}
           </p>
-          <SeeProduct where={'/headphones'}></SeeProduct>
+          <SeeProduct where={'/projectors'}></SeeProduct>
         </section>
         <Bringing></Bringing>
         <section className='yx1 '>
@@ -124,7 +124,7 @@ function Home() {
                 ? 'لقاعات المحاضرات ، القاعات الكبيرة ، المحرمات ، الفعاليات ، والعلامات الرقمية ، تقدم هذه المشغلات العالية اللومن صورًا ذات جودة لا تقبل المساومة ، وفيديو رائع وموثوقية عالية المستوى.'
                 : 'For lecture halls, auditoriums, sanctuaries, events, and digital signage, these high-lumen projectors provide uncompromising image quality, brilliant video and professional-grade reliability.'}
             </p>
-            <SeeProduct where={'/headphones'}></SeeProduct>
+            <SeeProduct where={'/projectors'}></SeeProduct>
             <picture>
               <source
                 srcSet='/assets/icg/large-venue-projectors_bg_largevenueprinters.jpg'
