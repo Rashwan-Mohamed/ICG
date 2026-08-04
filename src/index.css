@@ -955,7 +955,7 @@ ul.cats:nth-child(5) {
 
 .gallary img {
   border-radius: var(--radius);
-  height: 100% !important;
+  height: auto !important;
 }
 
 /* Element | http://127.0.0.1:5173/product_detail/zx9 */
