@@ -2942,6 +2942,11 @@ article.gallary {
   padding: 10px 14px;
   border-radius: 6px;
 }
+
+.adminProductRow button {
+    color: white;
+}
+
 .adminProductRow img {
   width: 50px;
   height: 50px;
@@ -2950,4 +2955,241 @@ article.gallary {
 }
 .adminProductName {
   flex: 1;
+}
+
+/* ============================================================
+   PLP / PDP rebuild — fresh classes, deliberately not reusing
+   the legacy .ProductCat/.headMain rules above (those were
+   exported from browser devtools against old demo data and
+   conflict with each other across a dozen breakpoints).
+   ============================================================ */
+
+.headMain {
+  display: block;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 4rem 6rem;
+}
+
+.loadingProducts {
+  padding: 3rem 0;
+  text-align: center;
+  opacity: 0.6;
+  font-size: 16px;
+}
+
+/* --- sort toolbar --- */
+.sorted {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 2.5rem;
+}
+
+.sorted > button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.7rem 1.2rem;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: var(--radius);
+  background: var(--white);
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.sorted > button:hover {
+  border-color: var(--orange);
+}
+
+.sorted .sortByShow {
+  color: var(--orange);
+  font-weight: 600;
+}
+
+.sorted svg {
+  color: rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s ease-in-out;
+}
+
+.sorted svg.rot {
+  transform: rotate(180deg);
+}
+
+.menu-dropDown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  z-index: 5;
+  min-width: 200px;
+}
+
+.menu-dropDown ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-dropDown li {
+  padding: 0.75rem 1.2rem;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: left;
+  transition: background 0.15s ease;
+  white-space: nowrap;
+}
+
+.menu-dropDown li:hover {
+  background: var(--whito);
+  color: var(--orange);
+}
+
+/* --- card grid (PLP + Similar Products) --- */
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 40px 30px;
+}
+
+.productCard {
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  color: inherit;
+  text-decoration: none;
+}
+
+.productCard:visited {
+  color: inherit;
+}
+
+.productCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.productCard .cardImage {
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  background: var(--whito);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.productCard .cardImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 24px;
+}
+
+.productCard .cardBody {
+  padding: 1.25rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  text-align: left;
+  align-items: flex-start;
+}
+
+.productCard .cardBody h1 {
+  font-size: 19px;
+  line-height: 1.3;
+}
+
+.productCard .cardBody .paraDetail {
+  font-size: 14px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0;
+}
+
+.productCard .cardBody h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: auto 0 0;
+}
+
+.productCard .cardBody .seePro {
+  margin-top: 4px;
+}
+
+/* --- Similar Products section --- */
+.mayAlos {
+  display: block;
+  margin: 5rem 0 2rem;
+}
+
+.mayAlos > h2 {
+  margin-bottom: 2rem;
+}
+
+/* --- product detail page --- */
+.productDetail {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 0 60px;
+  align-items: start;
+  margin-top: 1rem;
+}
+
+.productDetail .details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px 0;
+}
+
+.phoneStyle {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px 0;
+}
+
+.productDetail .details ul,
+.phoneStyle ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px 0;
+}
+
+.other img.thumbActive {
+  border: 2px solid var(--orange);
+}
+
+.addToCart {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 10px 0;
+}
+
+@media screen and (max-width: 900px) {
+  .headMain {
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  .productDetail {
+    grid-template-columns: 1fr;
+    gap: 40px 0;
+  }
+
+  .productGrid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 30px 20px;
+  }
 }

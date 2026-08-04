@@ -88,14 +88,14 @@ function Navbar() {
         sizes='(min-width:1024px)'
       />
       <source
-        srcSet='\assets\shared\tablet\logo.svg '
+        srcSet='\assets\shared\tablet\logo.png '
         sizes='(min-width:481px)'
       />
       <source
-        srcSet='\assets\shared\mobile\logo.svg'
+        srcSet='\assets\shared\mobile\logo.png'
         media='(max-width:480px)'
       />
-      <img srcSet='\assets\shared\desktop\logo.svg' alt='audiophile logo' />
+      <img srcSet='\assets\shared\desktop\logo.png' alt='audiophile logo' />
     </picture> */}
         <h2 className='LEGO'>PRJ-X</h2>
         <ul className='cats'>

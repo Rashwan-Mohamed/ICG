@@ -126,6 +126,7 @@ function ProductPage() {
             onMouseEnter={() => setSelected(index)}
             onTouchStart={() => setSelected(index)}
             key={img.id}
+            className={sel === index ? 'thumbActive' : undefined}
             src={resolveImage(img.image_path)}
             alt=''
           />
@@ -163,7 +164,7 @@ function ProductPage() {
           {lang ? `العودة` : `GoBack`}{' '}
         </button>
 
-        <section className='ProductCat '>
+        <section className='productDetail'>
           {width > 520 ? (
             <>
               {gallerySection}
@@ -205,21 +206,23 @@ function ProductPage() {
           )}
         </section>
 
-        <section className='mayAlos'>
-          <h2>{lang ? 'منتجات مماثلة' : 'Similar Products'}</h2>
-          {similar.map((prod, index) => (
-            <ProductCat
-              key={prod.id}
-              id={prod.id}
-              product={prod.product}
-              feature={prod.feature}
-              detail={prod.detail}
-              price={prod.price}
-              mainImage={prod.main_image}
-              turn={index % 2 === 0}
-            ></ProductCat>
-          ))}
-        </section>
+        {similar.length > 0 && (
+          <section className='mayAlos'>
+            <h2>{lang ? 'منتجات مماثلة' : 'Similar Products'}</h2>
+            <div className='productGrid'>
+              {similar.map((prod) => (
+                <ProductCat
+                  key={prod.id}
+                  id={prod.id}
+                  product={prod.product}
+                  detail={prod.detail}
+                  price={prod.price}
+                  mainImage={prod.main_image}
+                ></ProductCat>
+              ))}
+            </div>
+          </section>
+        )}
       </main>
       <Footer></Footer>
     </>

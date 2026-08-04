@@ -1,22 +1,24 @@
 import React from 'react'
-import SeeProduct from './SeeProduct'
+import { Link } from 'react-router-dom'
+import { useGlobalContext } from '../context'
 import { resolveImage } from '../services/api'
 
-function ProductCat({ id, product, feature, detail, price, mainImage, turn }) {
+function ProductCat({ id, product, detail, price, mainImage }) {
+  const { lang } = useGlobalContext()
   return (
-    <section className='ProductCat '>
-      <img src={resolveImage(mainImage)} alt={product} />
-      <article className='details'>
-        {/* <p className='desc'>{feature}</p> */}
+    <Link to={`/product_detail/${id}`} className='productCard'>
+      <div className='cardImage'>
+        <img src={resolveImage(mainImage)} alt={product} />
+      </div>
+      <article className='cardBody'>
         <h1>{product}</h1>
         <p className='paraDetail'>{detail}</p>
         <h3>{price} EGB</h3>
-        <SeeProduct
-          where={`/product_detail/${id}`}
-          sases={'seeProduct'}
-        ></SeeProduct>
+        <span className='seePro'>
+          {lang ? 'رؤية المنتج' : 'SEE PRODUCT'}
+        </span>
       </article>
-    </section>
+    </Link>
   )
 }
 

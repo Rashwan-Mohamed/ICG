@@ -18,14 +18,14 @@ function Footer({ className }) {
             sizes='(min-width:1024px)'
           />
           <source
-            srcSet='\assets\shared\tablet\logo.svg '
+            srcSet='\assets\shared\tablet\logo.png '
             sizes='(min-width:481px)'
           />
           <source
-            srcSet='\assets\shared\mobile\logo.svg'
+            srcSet='\assets\shared\mobile\logo.png'
             media='(max-width:480px)'
           />
-          <img srcSet='\assets\shared\desktop\logo.svg' alt='audiophile logo' />
+          <img srcSet='\assets\shared\desktop\logo.png' alt='audiophile logo' />
         </picture>
         <p dir={lang ? 'rtl' : 'lrt'} className='audioSpecialist'>
           {lang

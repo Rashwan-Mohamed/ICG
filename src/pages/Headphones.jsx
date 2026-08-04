@@ -3,9 +3,11 @@ import ProductCat from '../components/ProductCat'
 import Footer from '../components/Footer'
 import { useGlobalContext } from '../context'
 
+const SORT_OPTIONS = ['Price Highest', 'Price lowest', 'Lumens Highest', 'Lumens lowest']
+
 function Headphones() {
   const { products, productsLoading } = useGlobalContext()
-  const [sortBy, setSortBy] = useState('price highest')
+  const [sortBy, setSortBy] = useState('Price Highest')
   const [show, setShow] = useState(false)
   useEffect(() => {
     scrollTo(0, 0)
@@ -40,22 +42,20 @@ function Headphones() {
       <header className='headHeader'>
         <h1>Products</h1>
       </header>
-      <main className='headMain '>
+      <main className='headMain'>
         <section className='sorted'>
-          <button>
-            Sort By :
-            <span onClick={() => setShow(true)} className='sortByShow'>
-              {sortBy}
-            </span>
+          <button type='button' onClick={() => setShow((s) => !s)}>
+            Sort By:
+            <span className='sortByShow'>{sortBy}</span>
             <svg
-              className={`${show ? 'rot' : 'undefined'}`}
+              className={show ? 'rot' : undefined}
               width='10'
               height='7'
               xmlns='http://www.w3.org/2000/svg'
             >
               <path
                 d='M1 6l4-4 4 4'
-                stroke='#fff'
+                stroke='currentColor'
                 strokeWidth='2'
                 fill='none'
                 fillRule='evenodd'
@@ -66,36 +66,32 @@ function Headphones() {
           {show && (
             <div className='menu-dropDown'>
               <ul onClick={() => setShow(false)}>
-                <li onClick={() => setSortBy('Price Highest')}>
-                  Price Highest
-                </li>
-                <li onClick={() => setSortBy('Price lowest')}>Price lowest</li>
-                <li onClick={() => setSortBy('Lumens Highest')}>
-                  Lumens Highest
-                </li>
-                <li onClick={() => setSortBy('Lumens lowest')}>
-                  Lumens lowest
-                </li>
+                {SORT_OPTIONS.map((option) => (
+                  <li key={option} onClick={() => setSortBy(option)}>
+                    {option}
+                  </li>
+                ))}
               </ul>
             </div>
           )}
         </section>
+
         {productsLoading && <p className='loadingProducts'>Loading...</p>}
         {!productsLoading && sorted.length === 0 && (
           <p className='loadingProducts'>No products yet.</p>
         )}
-        {sorted.map((prod, index) => (
-          <ProductCat
-            key={prod.id}
-            id={prod.id}
-            product={prod.product}
-            feature={prod.feature}
-            detail={prod.detail}
-            price={prod.price}
-            mainImage={prod.main_image}
-            turn={index % 2 === 0}
-          ></ProductCat>
-        ))}
+        <div className='productGrid'>
+          {sorted.map((prod) => (
+            <ProductCat
+              key={prod.id}
+              id={prod.id}
+              product={prod.product}
+              detail={prod.detail}
+              price={prod.price}
+              mainImage={prod.main_image}
+            ></ProductCat>
+          ))}
+        </div>
       </main>
       <Footer></Footer>
     </>
