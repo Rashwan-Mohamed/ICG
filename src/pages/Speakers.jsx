@@ -1,8 +1,4 @@
-import React, { useEffect } from 'react'
-// import { SPEAKERS } from '../data/CategoryData'
-import ProductCat from '../components/ProductCat'
-import Category from '../components/Category'
-import Bringing from '../components/Bringing'
+import { useEffect } from 'react'
 import Footer from '../components/Footer'
 import { useGlobalContext } from '../context'
 
@@ -29,13 +25,11 @@ function Speakers() {
             {lang ? 'معلومات الاتصال:' : 'Contact info:'}
           </h4>
           <div style={{ justifyContent: lang ? 'flex-end' : 'flex-start' }}>
-            <a href='tel:+201012090137'>01012090137</a>
-            <a href='tel:+201028329328'>01028329328</a>
-            <a href='tel:+201010503578'>01010503578</a>
+            <a href='tel:+201028431234'>01028431234</a>
             <a dir={lang ? 'rtl' : 'ltr'}>
               {lang
-                ? 'راسلنا على WhatsApp: 01028329328'
-                : 'Message Us on WhatsApp: 01028329328'}
+                ? 'راسلنا على WhatsApp: 01028431234'
+                : 'Message Us on WhatsApp: 01028431234'}
             </a>
           </div>
           <h4 dir={lang ? 'rtl' : 'ltr'}>
@@ -43,39 +37,10 @@ function Speakers() {
           </h4>
           <ul dir={lang ? 'rtl' : 'ltr'}>
             <li>
-              {lang ? 'مول البستان الدور الرابع' : ' 4th Floor, Al-Bustan Mall'}
-              <br />
-              {lang ? 'وسط البلد, القاهرة' : 'Downtown, Cairo'}
-            </li>
-            <br />
-            <li>
-              {' '}
-              {lang ? ' شارع مصطفي أبو حيف' : 'Mustafa Abu Haif Street'}
-              <br />
-              {lang ? '  عابدين, القاهرة' : 'Abdeen, Cairo'}
+                {lang ? 'حلوان القاهرة' : 'Helwan Cairo'}
             </li>
           </ul>
         </section>
-        {/* {SPEAKERS.map((prod, index) => {
-    const { product, feature, detail, label, alt, src, price, link } =
-      prod
-    return (
-      <ProductCat
-        key={product}
-        product={product}
-        feature={feature}
-        detail={detail}
-        label={label}
-        alt={alt}
-        place={src}
-        price={price}
-        link={link}
-        turn={index % 2 == 0}
-      ></ProductCat>
-    )
-  })} */}
-        {/* <Category></Category> */}
-        {/* <Bringing></Bringing> */}
       </main>
       <Footer></Footer>
     </>

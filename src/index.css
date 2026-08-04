@@ -688,7 +688,7 @@ footer {
   grid-row: 1;
   align-self: self-start;
 }
-.footerHero img {
+.footerHero {
   height: 150px;
   width: 150px;
 }
