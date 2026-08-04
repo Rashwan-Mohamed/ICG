@@ -9,12 +9,12 @@ function Category({ setOpen }) {
             setOpen(false)
           }
         }}
-        to={'/headphones'}
+        to={'/projectors'}
       >
         {/* <picture>
           <img
             src='/assets\icg\w2710-gallery-1-2.webp'
-            alt='mark-one-headphones'
+            alt='mark-one-projectors'
           />
         </picture>{' '} */}
         <h5>Products</h5>
