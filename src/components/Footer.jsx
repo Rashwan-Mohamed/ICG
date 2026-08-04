@@ -53,7 +53,7 @@ function Footer({ className }) {
           <li>
             <Link
               style={{ fontSize: lang ? '16px' : '13px' }}
-              to={'/headphones'}
+              to={'/projectors'}
             >
               {lang ? 'المنتجات' : 'Products'}
             </Link>

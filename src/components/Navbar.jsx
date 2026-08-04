@@ -104,10 +104,10 @@ function Navbar() {
               {lang ? 'الصفحة الرئيسية' : 'Home'}
             </Link>
           </li>
-          <li className={isHome === '/headphones' ? 'here' : 'undefined'}>
+          <li className={isHome === '/projectors' ? 'here' : 'undefined'}>
             <Link
               style={{ fontSize: lang ? '16px' : '13px' }}
-              to={'/headphones'}
+              to={'/projectors'}
             >
               {lang ? 'المنتجات' : 'Products'}
             </Link>

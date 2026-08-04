@@ -58,7 +58,7 @@ go through fine.
    in at build time, so it must be set before building, and re-set/rebuilt
    any time the site's domain changes.
 7. Upload the contents of the generated `dist/` folder (including the
-   `.htaccess` it contains, which makes client-side routes like `/headphones`
+   `.htaccess` it contains, which makes client-side routes like `/projectors`
    work on a hard refresh) into `htdocs/`, alongside the `backend/` folder
    from step 2 — so `htdocs/index.html`, `htdocs/assets/...` and
    `htdocs/backend/...` all sit next to each other.
