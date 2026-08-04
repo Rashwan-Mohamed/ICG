@@ -4,7 +4,9 @@ require_once __DIR__ . '/cors.php';
 
 function icg_bearer_token()
 {
-    $header = isset($_SERVER['HTTP_AUTHORIZATION']) ? $_SERVER['HTTP_AUTHORIZATION'] : isset($_SERVER['REDIRECT_HTTP_AUTHORIZATION']) ? $_SERVER['REDIRECT_HTTP_AUTHORIZATION'] : '';
+    $header = isset($_SERVER['HTTP_AUTHORIZATION'])
+        ? $_SERVER['HTTP_AUTHORIZATION']
+        : (isset($_SERVER['REDIRECT_HTTP_AUTHORIZATION']) ? $_SERVER['REDIRECT_HTTP_AUTHORIZATION'] : '');
 
     if (preg_match('/Bearer\s+(\S+)/i', $header, $matches)) {
         return $matches[1];

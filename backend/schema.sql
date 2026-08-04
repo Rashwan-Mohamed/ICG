@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS products (
     id INT AUTO_INCREMENT PRIMARY KEY,
     product VARCHAR(150) NOT NULL,
     brand VARCHAR(80) DEFAULT NULL,
-    feature VARCHAR(255) DEFAULT NULL,
+    feature TEXT,
     detail TEXT,
     price DECIMAL(10,2) NOT NULL DEFAULT 0,
     model_number VARCHAR(80) DEFAULT NULL,
